@@ -27,7 +27,12 @@ class LoginForm {
     e.preventDefault()
     const username = document.querySelector("input").value
     this.user.api.postUser(username)
-    .then(data => user.updateInfo(data))
+    .then(data => {
+      user.updateInfo(data)
+      this.deleteForm()
+    })
   }
+
+  deleteForm = () => this.main.innerHTML = ""
 
 }
