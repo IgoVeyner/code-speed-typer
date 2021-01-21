@@ -28,7 +28,7 @@ class LoginForm {
       this.deleteForm()
       this.user.displayGame()
     })
-    // .catch(error => console.log(error))
+    .catch(error => console.log(error))
   }
 
   deleteForm = () => this.main.innerHTML = ""
