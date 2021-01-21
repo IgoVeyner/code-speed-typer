@@ -2,7 +2,7 @@ class User {
 
   constructor() {
     this.api = new API
-    this.display = new LoginForm
+    this.display = new LoginForm(this)
   }
 
   // TODO
