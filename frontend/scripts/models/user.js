@@ -1,7 +1,10 @@
 class User {
+
+  constructor() {
+    this.api = new API
+  }
+
   // TODO
-  // 1. User instance creates an instance of API
-  //      save it to this.api so the user can access it later?
   // 2. User instance create an instance of login display component
   //      this component render the form for User creation
   // 3. create a name setter that accepts an argument

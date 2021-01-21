@@ -1,1 +1,1 @@
-let api = new API
+let user = new User
