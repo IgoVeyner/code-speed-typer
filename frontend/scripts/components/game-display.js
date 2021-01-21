@@ -7,6 +7,7 @@ class GameDisplay {
 
   createDisplay = () => {
     this.addUsername()
+    this.addTimer()
   }
 
   addUsername = () => {
@@ -17,5 +18,12 @@ class GameDisplay {
 
     usernameContainer.appendChild(username)
     this.main.appendChild(usernameContainer)
+  }
+
+  addTimer = () => {
+    // TODO
+    // add backend score resource 
+    // add frontend score class
+    console.log("adding timer...")
   }
 }
