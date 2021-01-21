@@ -12,7 +12,7 @@ class API {
   postUser = () => {
     return fetch(this.userURL, {
       method: "POST",
-      headers = this.headers,
+      headers: this.headers,
       body: JSON.stringify({})
     })
     .then(console.log)
