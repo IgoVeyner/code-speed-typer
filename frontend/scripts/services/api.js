@@ -1,7 +1,12 @@
 class API {
+
+  // Constructor
+
   constructor(port = 3000) {
     this.url = `http://localhost:${port}`
   }
+
+  // Helpers
 
   parseJSON = response => {
     if (response.status === 200) {
@@ -13,9 +18,13 @@ class API {
 
   headers = {"Accepts": "application/json", "Content-Type": "application/json"}
 
+  // Attribute getters
+
   get userURL() {
     return this.url + '/users'
   }
+
+  // User Requests
 
   postUser = () => {
     return fetch(this.userURL, {
