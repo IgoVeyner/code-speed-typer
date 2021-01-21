@@ -3,6 +3,14 @@ class API {
     this.url = `http://localhost:${port}`
   }
 
+  parseJSON = response => {
+    if (response.status === 200) {
+      return response.json()
+    } else {
+      throw console.error("Nope")
+    }
+  }
+
   headers = {"Accepts": "application/json", "Content-Type": "application/json"}
 
   get userURL() {
@@ -15,6 +23,6 @@ class API {
       headers: this.headers,
       body: JSON.stringify({})
     })
-    .then(console.log)
+    .then(this.parseJSON)
   }
 }
