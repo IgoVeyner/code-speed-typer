@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def create
-    "test"
+    user = User.create
+    render json: user
   end
 end
