@@ -25,6 +25,8 @@ class LoginForm {
 
   postToUsers = e => {
     e.preventDefault()
+    const username = document.querySelector("input").value
+    this.user.api.postUser(username)
   }
 
 }
