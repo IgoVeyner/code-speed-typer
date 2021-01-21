@@ -13,7 +13,7 @@ class User {
     this.username = data.name
   }
 
-  displayGame = () => this.display = new GameDisplay
+  displayGame = () => this.display = new GameDisplay(this)
 
   // TODO
   // 1. Add a method to create a game-display component
