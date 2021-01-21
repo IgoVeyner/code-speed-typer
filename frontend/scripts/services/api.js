@@ -26,11 +26,11 @@ class API {
 
   // User Requests
 
-  postUser = () => {
+  postUser = (username) => {
     return fetch(this.userURL, {
       method: "POST",
       headers: this.headers,
-      body: JSON.stringify({})
+      body: JSON.stringify({username})
     })
     .then(this.parseJSON)
   }
