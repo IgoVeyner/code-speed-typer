@@ -26,6 +26,7 @@ class LoginForm {
     .then(data => {
       user.updateInfo(data)
       this.deleteForm()
+      this.user.displayGame()
     })
   }
 

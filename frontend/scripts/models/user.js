@@ -7,11 +7,13 @@ class User {
 
   // This does nothing functionally atm
   // If I add edit username / delete account this will become useful
-  
+
   updateInfo = data => {
     this.id = data.id
     this.username = data.name
   }
+
+  displayGame = () => this.display = new GameDisplay
 
   // TODO
   // 1. Add a method to create a game-display component
