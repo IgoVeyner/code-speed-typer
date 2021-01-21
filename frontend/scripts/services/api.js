@@ -30,7 +30,7 @@ class API {
     return fetch(this.userURL, {
       method: "POST",
       headers: this.headers,
-      body: JSON.stringify({username})
+      body: JSON.stringify({user: { name: username } })
     })
     .then(this.parseJSON)
   }
