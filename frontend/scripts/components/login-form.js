@@ -6,10 +6,9 @@ class LoginForm {
   } 
 
   createForm = () => {
-    const form = document.createElement("form")
-    const header = document.createElement("h1")
-    const input = document.createElement("input")
-    const submit = document.createElement("input")
+    const [form, header, input, submit] = ["form", "h1", "input", "input"].map(element => {
+      return document.createElement(element)
+    })
 
     header.innerText = "Enter a Username"
     submit.type = "submit"
@@ -17,9 +16,7 @@ class LoginForm {
 
     form.addEventListener("submit", this.postToUsers)
 
-    form.appendChild(header)
-    form.appendChild(input)
-    form.appendChild(submit)
+    for (const element of [header, input, submit]) { form.appendChild(element) }
     this.main.appendChild(form)
   }
 
