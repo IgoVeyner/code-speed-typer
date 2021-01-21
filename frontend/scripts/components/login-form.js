@@ -27,6 +27,7 @@ class LoginForm {
     e.preventDefault()
     const username = document.querySelector("input").value
     this.user.api.postUser(username)
+    .then(data => user.updateInfo(data))
   }
 
 }
