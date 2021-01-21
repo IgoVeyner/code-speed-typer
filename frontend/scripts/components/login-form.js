@@ -14,10 +14,16 @@ class LoginForm {
     submit.type = "submit"
     submit.value = "Continue"
 
+    form.addEventListener("submit", this.postToUsers)
+
     form.appendChild(header)
     form.appendChild(input)
     form.appendChild(submit)
     this.main.appendChild(form)
+  }
+
+  postToUsers = e => {
+    e.preventDefault()
   }
 
 }
