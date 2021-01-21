@@ -6,9 +6,8 @@ class LoginForm {
   } 
 
   createForm = () => {
-    const [form, header, input, submit] = ["form", "h1", "input", "input"].map(element => {
-      return document.createElement(element)
-    })
+    const elementsToCreate = ["form", "h1", "input", "input"]
+    const [form, header, input, submit] = elementsToCreate.map(element => document.createElement(element))
 
     header.innerText = "Enter a Username"
     submit.type = "submit"
