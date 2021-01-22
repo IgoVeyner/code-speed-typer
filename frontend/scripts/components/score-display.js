@@ -1,10 +1,8 @@
 class ScoreDisplay {
-  constructor(main) {
+  constructor(main, user) {
     this.main = main
     this.createDisplay()
-    // TODO
-    // 1. create a score model 
-    // 2. instantiate the model
+    user.score = new Score(user)
   }
 
   createDisplay = () => {
