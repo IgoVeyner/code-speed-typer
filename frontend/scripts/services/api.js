@@ -38,4 +38,15 @@ class API {
     })
     .then(this.parseJSON)
   }
+
+  // Score Requests 
+
+  postScore = score => {
+    return fetch(this.scoreURL, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify({score: {user_id: id} })
+    })
+    .then(this.parseJSON)
+  }
 }
