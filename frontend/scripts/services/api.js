@@ -36,7 +36,7 @@ class API {
 
   // Score Requests 
 
-  postScore = score => {
+  postScore = id => {
     return fetch(this.scoreURL, {
       method: "POST",
       headers: this.headers,
