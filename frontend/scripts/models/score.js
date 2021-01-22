@@ -14,6 +14,7 @@ class Score {
   createScore = () => this.user.api.postScore(this.user.id).then(this.assignID) 
   updateScore = () => {
     [this.time, this.strikes] = this.getCurrentScore()
+    this.user.api.updateScore(this.id, this.time, this.strikes, this.completed)
   }
 
   getCurrentScore = () => {
