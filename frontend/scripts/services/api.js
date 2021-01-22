@@ -44,4 +44,8 @@ class API {
     })
     .then(this.parseJSON)
   }
+
+  fetchScore = id => { 
+    return fetch(this.scoreURL + `/${id}`).then(this.parseJSON)
+   }
 }
