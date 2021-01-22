@@ -45,5 +45,19 @@ class API {
     return fetch(this.scoreURL + `/${id}`)
     .then(this.parseJSON)
     .catch(error => console.log(error))
-   }
+  }
+
+  updateScore = (id, time, strikes, completed = false) => {
+    return fetch(this.scoreURL + `/${id}`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify({ score: {
+        time: time,
+        strikes: strikes,
+        completed: completed
+      }})
+    })
+    .then(this.parseJSON)
+    .catch(error => console.log(error))
+  }
 }
