@@ -6,20 +6,10 @@ class GameDisplay {
   }
 
   createDisplay = () => {
-    this.addUsername()
+    this.nameplate = new Nameplate(this.main, this.user)
     this.addTimer()
     this.addLoC()
     this.addUserInput()
-  }
-
-  addUsername = () => {
-    const elementsToCreate = ["div", "h2"]
-    const [usernameContainer, username] = elementsToCreate.map(element => document.createElement(element))
-
-    username.innerText = this.user.username
-
-    usernameContainer.appendChild(username)
-    this.main.appendChild(usernameContainer)
   }
 
   addTimer = () => {
