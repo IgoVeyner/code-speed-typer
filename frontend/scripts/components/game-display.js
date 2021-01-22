@@ -8,16 +8,8 @@ class GameDisplay {
   createDisplay = () => {
     this.nameplate = new Nameplate(this.main, this.user)
     this.score = new ScoreDisplay(this.main)
-    this.addTimer()
     this.addLoC()
     this.addUserInput()
-  }
-
-  addTimer = () => {
-    // TODO
-    // add backend score resource 
-    // add frontend score class
-    console.log("adding timer...")
   }
 
   addLoC = () => {
