@@ -1,5 +1,5 @@
 class ScoresController < ApplicationController
-  before_action :find_score, only: [:show]
+  before_action :find_score, only: [:show, :update]
 
   def create
     score = Score.create(score_params)
@@ -14,6 +14,14 @@ class ScoresController < ApplicationController
     end
   end
 
+  def update
+    if @score
+      @score.update(score_params)
+    else
+      render json: {error: "Sorry, there is no score with that ID", status: 400}, status: 400
+    end
+  end
+
   private
 
   def find_score
@@ -21,6 +29,6 @@ class ScoresController < ApplicationController
   end
 
   def score_params
-    params.require(:score).permit(:user_id)
+    params.require(:score).permit(:user_id, :time, :strikes, :completed)
   end
 end
