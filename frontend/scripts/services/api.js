@@ -8,13 +8,7 @@ class API {
 
   // Helpers
 
-  parseJSON = response => {
-    if (response.status === 200) {
-      return response.json()
-    } else {
-      throw console.error("Nope")
-    }
-  }
+  parseJSON = response => response.json() 
 
   headers = {"Accepts": "application/json", "Content-Type": "application/json"}
 
@@ -46,6 +40,8 @@ class API {
   }
 
   fetchScore = id => { 
-    return fetch(this.scoreURL + `/${id}`).then(this.parseJSON)
+    return fetch(this.scoreURL + `/${id}`)
+    .then(this.parseJSON)
+    .catch(error => console.log(error))
    }
 }
