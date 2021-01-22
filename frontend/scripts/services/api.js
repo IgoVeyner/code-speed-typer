@@ -9,6 +9,7 @@ class API {
   // Helpers
 
   parseJSON = response => response.json() 
+  consoleLogError = error => console.log(error)
 
   headers = {"Accepts": "application/json", "Content-Type": "application/json"}
 
@@ -26,7 +27,7 @@ class API {
       body: JSON.stringify({user: { name: username } })
     })
     .then(this.parseJSON)
-    .catch(error => console.log(error))
+    .catch(this.consoleLogError)
   }
 
   // Score Requests 
@@ -38,13 +39,13 @@ class API {
       body: JSON.stringify({score: {user_id: id} })
     })
     .then(this.parseJSON)
-    .catch(error => console.log(error))
+    .catch(this.consoleLogError)
   }
 
   fetchScore = id => { 
     return fetch(this.scoreURL + `/${id}`)
     .then(this.parseJSON)
-    .catch(error => console.log(error))
+    .catch(this.consoleLogError)
   }
 
   updateScore = (id, time, strikes, completed = false) => {
@@ -58,6 +59,6 @@ class API {
       }})
     })
     .then(this.parseJSON)
-    .catch(error => console.log(error))
+    .catch(this.consoleLogError)
   }
 }
