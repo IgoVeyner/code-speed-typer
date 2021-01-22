@@ -20,17 +20,12 @@ class API {
 
   // Attribute getters
 
-  get userURL() {
-    return this.url + '/users'
-  }
-
-  get scoreURL() {
-    return this.url + '/scores'
-  }
+  get userURL() { return this.url + '/users' }
+  get scoreURL() { return this.url + '/scores' }
 
   // User Requests
 
-  postUser = (username) => {
+  postUser = username => {
     return fetch(this.userURL, {
       method: "POST",
       headers: this.headers,
