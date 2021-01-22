@@ -37,5 +37,6 @@ class GameDisplay {
     // do patch request
     // check to see if the game is over
     // a lot more stuff...
+    this.user.score.updateScore()
   }
 }
