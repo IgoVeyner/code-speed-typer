@@ -26,6 +26,7 @@ class API {
       body: JSON.stringify({user: { name: username } })
     })
     .then(this.parseJSON)
+    .catch(error => console.log(error))
   }
 
   // Score Requests 
@@ -37,6 +38,7 @@ class API {
       body: JSON.stringify({score: {user_id: id} })
     })
     .then(this.parseJSON)
+    .catch(error => console.log(error))
   }
 
   fetchScore = id => { 
