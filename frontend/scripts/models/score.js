@@ -13,13 +13,13 @@ class Score {
 
   createScore = () => this.user.api.postScore(this.user.id).then(this.assignID) 
   updateScore = () => {
-    // TODO: 
-    // Add helper to get the current time / strikes / check if LOC is done
+    [this.time, this.strikes] = this.getCurrentScore()
   }
 
   getCurrentScore = () => {
     // TODO: 
-    // 1. add method to check if line of code is complete
+    // add method to check if line of code is complete, assign to a boolean, and return
+    
     let timer = this.user.display.scoreDiv.timer.innerText
     let strikes = this.user.display.scoreDiv.num.innerText
 
