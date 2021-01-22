@@ -22,7 +22,7 @@ class GameDisplay {
   addUserInput = () => {
     const input = document.createElement("input")
 
-    input.addEventListener("change", this.inputEvent)
+    input.addEventListener("input", this.inputEvent)
     
     this.main.appendChild(input)
 
