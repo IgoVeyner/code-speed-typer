@@ -16,5 +16,8 @@ class ScoreDisplay {
     strikes.appendChild(num)
     for (const element of [timer, strikes]) { container.appendChild(element) }
     this.main.appendChild(container)
+
+    this.timer = timer
+    this.num = num
   }
 }
