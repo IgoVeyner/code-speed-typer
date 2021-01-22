@@ -7,12 +7,11 @@ class Score {
     this.createScore()
   }
 
-  // TODO: 
-  // 1. helper to use the api serv to update the current score in the DB
-  // 2. helper to update the instance's time / strikes / completed status
-
   createScore = () => this.user.api.postScore(this.user.id).then(this.assignID) 
   updateScore = () => {
+    // TODO:
+    // add this.completed to mass-asignment below
+
     [this.time, this.strikes] = this.getCurrentScore()
     this.user.api.updateScore(this.id, this.time, this.strikes, this.completed)
   }
