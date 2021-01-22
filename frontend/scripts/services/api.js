@@ -24,6 +24,10 @@ class API {
     return this.url + '/users'
   }
 
+  get scoreURL() {
+    return this.url + '/scores'
+  }
+
   // User Requests
 
   postUser = (username) => {
