@@ -7,6 +7,7 @@ class GameDisplay {
 
   createDisplay = () => {
     this.nameplate = new Nameplate(this.main, this.user)
+    this.score = new ScoreDisplay(this.main)
     this.addTimer()
     this.addLoC()
     this.addUserInput()
