@@ -1,6 +1,7 @@
 class CodesController < ApplicationController
   before_action :find_code, only: [:show]
 
+  # might not need this, depending on how highscore sends its data
   def show
     if @code
       render json: @code
@@ -13,7 +14,7 @@ class CodesController < ApplicationController
     count = Code.count
     num = rand(count) + 1
     @code = find_code(num)
-    
+
     if @code
       render json: @code
     else

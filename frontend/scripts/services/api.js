@@ -75,6 +75,7 @@ class API {
 
   // Code Requests
 
+  // might not need this, depending on how highscore sends its data
   fetchCode = id => {
     return fetch(this.codeURL + `/${id}`)
     .then(this.parseJSON)
