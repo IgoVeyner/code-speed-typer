@@ -2,7 +2,6 @@ class ScoreDisplay {
   constructor(main, user) {
     this.main = main
     this.createDisplay()
-    user.score = new Score(user)
   }
 
   createDisplay = () => {

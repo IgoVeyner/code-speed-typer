@@ -10,5 +10,9 @@ class User {
     this.username = data.name
   }
 
-  displayGame = () => this.display = new GameDisplay(this)
+  displayGame = () => {
+    this.code = new Code(this)
+    this.score = new Score(this)
+    this.display = new GameDisplay(this)
+  }
 }
