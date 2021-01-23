@@ -7,7 +7,7 @@ class Score {
     this.createScore()
   }
 
-  createScore = () => this.user.api.postScore(this.user.id).then(this.assignID) 
+  createScore = () => this.user.api.postScore(this.user.id, this.user.code.id).then(this.assignID) 
   updateScore = () => {
     // TODO:
     // add this.completed to mass-asignment below

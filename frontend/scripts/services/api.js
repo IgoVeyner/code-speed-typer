@@ -33,11 +33,16 @@ class API {
 
   // Score Requests 
 
-  postScore = id => {
+  postScore = (user_id, code_id) => {
     return fetch(this.scoreURL, {
       method: "POST",
       headers: this.headers,
-      body: JSON.stringify({score: {user_id: id} })
+      body: JSON.stringify({
+        score: {
+          user_id: id,
+          code_id: id
+        } 
+      })
     })
     .then(this.parseJSON)
     .catch(this.consoleLogError)
