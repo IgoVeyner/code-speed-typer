@@ -22,15 +22,6 @@ class LoginForm {
   postToUsers = e => {
     e.preventDefault()
     const username = document.querySelector("input").value
-    this.user.api.postUser(username)
-    .then(data => {
-      user.updateInfo(data)
-      this.deleteForm()
-      this.user.displayGame()
-    })
-    .catch(error => console.log(error))
+    this.user.postUser(username)
   }
-
-  deleteForm = () => this.main.innerHTML = ""
-
 }

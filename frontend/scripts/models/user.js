@@ -5,6 +5,15 @@ class User {
     this.display = new LoginForm(this)
   }
 
+  postUser = username => {
+    this.api.postUser(username)
+    .then(data => {
+      this.updateInfo(data)
+      this.displayGame()
+    })
+    .catch(error => console.log(error))
+  }
+
   updateInfo = data => {
     this.id = data.id
     this.username = data.name
