@@ -12,12 +12,19 @@ class CodesController < ApplicationController
   def random 
     count = Code.count
     num = rand(count) + 1
-    redirect_to code_path(num)
+    @code = find_code(num)
+    
+    if @code
+      render json: @code
+    else
+      render json: {error: "Sorry, there is no code with that ID", status: 400}, status: 400
+    end
   end
 
   private
 
-  def find_code
-    @code = Code.find_by_id(params[:id])
+  def find_code(id)
+    query = id ? id : params[:id]  
+    @code = Code.find_by_id(query)
   end
 end
