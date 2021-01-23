@@ -11,7 +11,7 @@ class CodesController < ApplicationController
 
   def random 
     count = Code.count
-    num = rand(count)
+    num = rand(count) + 1
     redirect_to code_path(num)
   end
 
