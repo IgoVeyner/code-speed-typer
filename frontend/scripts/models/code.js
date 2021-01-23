@@ -9,7 +9,7 @@ class Code {
   // 2. update func to get random code data
 
   getCode = () => {
-    this.user.api.fetchCode(4)
+    this.user.api.fetchRandomCode()
     .then(this.handleData)
   }
 
