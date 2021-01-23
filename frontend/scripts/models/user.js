@@ -11,7 +11,6 @@ class User {
       this.updateInfo(data)
       this.createCode()
     })
-    .catch(error => console.log(error))
   }
 
   updateInfo = data => {
