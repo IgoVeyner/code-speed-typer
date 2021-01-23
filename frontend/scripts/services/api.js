@@ -39,8 +39,8 @@ class API {
       headers: this.headers,
       body: JSON.stringify({
         score: {
-          user_id: id,
-          code_id: id
+          user_id: user_id,
+          code_id: code_id
         } 
       })
     })

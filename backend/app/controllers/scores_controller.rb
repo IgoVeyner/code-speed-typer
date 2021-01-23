@@ -30,6 +30,6 @@ class ScoresController < ApplicationController
   end
 
   def score_params
-    params.require(:score).permit(:user_id, :time, :strikes, :completed)
+    params.require(:score).permit(:user_id, :code_id, :time, :strikes, :completed)
   end
 end

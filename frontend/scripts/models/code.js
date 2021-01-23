@@ -1,6 +1,7 @@
 class Code {
   constructor(user) {
     this.user = user
+    this.getCode()
   }
 
   // TODO:
