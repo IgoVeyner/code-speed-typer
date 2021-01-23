@@ -17,5 +17,7 @@ class Code {
     this.id = codeData.id
     this.line = codeData.line
     this.name = codeData.line
+    this.user.createScore()
+    this.user.createGameDisplay()
   }
 }

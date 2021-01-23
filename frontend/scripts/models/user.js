@@ -9,7 +9,7 @@ class User {
     this.api.postUser(username)
     .then(data => {
       this.updateInfo(data)
-      this.displayGame()
+      this.createCode()
     })
     .catch(error => console.log(error))
   }
@@ -19,9 +19,7 @@ class User {
     this.username = data.name
   }
 
-  displayGame = () => {
-    this.code = new Code(this)
-    this.score = new Score(this)
-    this.display = new GameDisplay(this)
-  }
+  createCode = () => this.code = new Code(this)
+  createScore = () => this.score = new Score(this)
+  createGameDisplay = () => this.display = new GameDisplay(this)
 }
