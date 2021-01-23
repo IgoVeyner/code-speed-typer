@@ -22,6 +22,10 @@ class LoginForm {
   postToUsers = e => {
     e.preventDefault()
     const username = document.querySelector("input").value
+    this.deleteForm()
     this.user.postUser(username)
   }
+
+  deleteForm = () => this.main.innerHTML = ""
+
 }
