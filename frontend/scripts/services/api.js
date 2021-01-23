@@ -62,4 +62,12 @@ class API {
     .then(this.parseJSON)
     .catch(this.consoleLogError)
   }
+
+  // Code Requests
+
+  fetchCode = id => {
+    return fetch(this.codeURL + `/${id}`)
+    .then(this.parseJSON)
+    .catch(this.consoleLogError)
+  }
 }
