@@ -1,5 +1,5 @@
 class CodesController < ApplicationController
-  before_action :find_code, only:[:show, :update]
+  before_action :find_code, only: [:show]
 
   def show
     if @code
