@@ -9,6 +9,12 @@ class CodesController < ApplicationController
     end
   end
 
+  def random 
+    count = Code.count
+    num = rand(count)
+    redirect_to code_path(num)
+  end
+
   private
 
   def find_code
