@@ -79,4 +79,9 @@ class API {
     return fetch(this.codeURL + `/${id}`)
     .then(this.parseJSON)
   }
+
+  fetchRandomCode = () => {
+    return fetch(this.codeURL + `/random`)
+    .then(this.parseJSON)
+  }
 }
