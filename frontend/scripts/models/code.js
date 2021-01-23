@@ -4,10 +4,6 @@ class Code {
     this.getCode()
   }
 
-  // TODO:
-  // 1. update instance info from fetch request
-  // 2. update func to get random code data
-
   getCode = () => {
     this.user.api.fetchRandomCode()
     .then(this.handleData)
