@@ -17,6 +17,7 @@ class API {
 
   get userURL() { return this.url + '/users' }
   get scoreURL() { return this.url + '/scores' }
+  get codeURL() { return this.url + '/codes' }
 
   // User Requests
 
