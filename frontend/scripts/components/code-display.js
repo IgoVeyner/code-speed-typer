@@ -20,12 +20,17 @@ class CodeDisplay {
 
   checkInput = input => {
     if (input === this.characters.children[this.index].innerText) {
+      this.handleTimer()
       this.index += 1
       return true
     } else {
       return false
     }
   }
+
+  handleTimer = () => {
+    if (this.index === 0) { this.user.display.scoreDiv.startTimer() }
+}
 
   updateColor = state => {
     if (state) {

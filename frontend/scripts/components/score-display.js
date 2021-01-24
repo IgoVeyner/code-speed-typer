@@ -21,4 +21,17 @@ class ScoreDisplay {
   }
 
   updateStrikes = () => this.num.innerText = `${parseInt(this.num.innerText, 10) + 1}`
+  startTimer = () => this.interval = setInterval(this.updateTimer, 10) 
+  
+  updateTimer = () => { 
+    const str = `${parseInt(this.timer.innerText.replace(":", ""), 10) + 1}`
+    if (str.length < 2) {
+      this.timer.innerText = `00:0${str}`
+    } else if (str.length < 3) {
+      this.timer.innerText = `00:${str}`
+    } else {
+      console.log(str.slice(0, str.length - 2))
+      this.timer.innerText = str.slice(0, str.length - 2) + ":" + str.slice(str.length - 2, str.length)
+    }
+  }
 }
