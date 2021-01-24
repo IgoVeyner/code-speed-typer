@@ -47,16 +47,13 @@ class CodeDisplay {
      }
   }
 
-  updateColor = state => {
-    if (state) {
+  updateColor = truthy => {
+    if (truthy) {
       const current = this.characters.children[this.index - 1]
       current.classList.remove("strike")
       current.classList.add("correct")
     } else {
-      const current = this.characters.children[this.index]
-      if (!current.classList.contains("strike")) {
-        current.classList.add("strike")
-      }
+      this.characters.children[this.index].classList.add("strike")
     }
   }
 }
