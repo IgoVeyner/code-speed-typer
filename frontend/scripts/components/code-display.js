@@ -34,6 +34,7 @@ class CodeDisplay {
       this.user.display.scoreDiv.stopTimer()
       this.user.score.completeGame()
       this.user.display.userInput.disableInput()
+      this.user.display.userInput.createButtons()
      }
   }
 

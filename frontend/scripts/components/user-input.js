@@ -34,5 +34,16 @@ class UserInput {
     this.input.disabled = true
   }
 
+  createButtons = () => {
+    const elementsToCreate = ["button", "button"]
+    const [tryAgain, newRandom] = elementsToCreate.map(element => document.createElement(element))
+    
+    tryAgain.innerText = "Try Again"
+    newRandom.innerText = "Random"
+
+    for(const element of [tryAgain, newRandom]) {
+      this.main.appendChild(element)
+    }
+  }
 
 }
