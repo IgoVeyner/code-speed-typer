@@ -41,9 +41,20 @@ class UserInput {
     tryAgain.innerText = "Try Again"
     newRandom.innerText = "Random"
 
+    tryAgain.addEventListener("click", this.tryAgain)
+    newRandom.addEventListener("click", this.newRandom)
+
     for(const element of [tryAgain, newRandom]) {
       this.main.appendChild(element)
     }
+  }
+
+  tryAgain = e => {
+    console.log("try again")
+  }
+
+  newRandom = e => {
+    console.log("new random")
   }
 
 }
