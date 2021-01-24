@@ -28,4 +28,17 @@ class CodeDisplay {
       return false
     }
   }
+
+  updateColor = state => {
+    if (state) {
+      const current = this.characters.children[this.index - 1]
+      current.classList.remove("strike")
+      current.classList.add("correct")
+    } else {
+      const current = this.characters.children[this.index]
+      if (!current.classList.contains("strike")) {
+        current.classList.add("strike")
+      }
+    }
+  }
 }

@@ -22,7 +22,8 @@ class UserInput {
     // a lot more stuff...
 
     const state = this.user.display.codeDisplay.checkInput(e.target.value)
-
+    this.user.display.codeDisplay.updateColor(state)
+    
     this.user.score.updateScore()
     e.target.value = ""
   }
