@@ -8,18 +8,13 @@ class Score {
   }
 
   createScore = () => this.user.api.postScore(this.user.id, this.user.code.id).then(this.assignID) 
+  
   updateScore = () => {
-    // TODO:
-    // add this.completed to mass-asignment below
-
     [this.time, this.strikes] = this.getCurrentScore()
     this.user.api.updateScore(this.id, this.time, this.strikes, this.completed)
   }
 
   getCurrentScore = () => {
-    // TODO: 
-    // add method to check if line of code is complete, assign to a boolean, and return
-    
     let timer = this.user.display.scoreDiv.timer.innerText
     let strikes = this.user.display.scoreDiv.num.innerText
 
