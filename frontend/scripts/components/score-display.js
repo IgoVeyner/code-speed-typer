@@ -22,6 +22,7 @@ class ScoreDisplay {
 
   updateStrikes = () => this.num.innerText = `${parseInt(this.num.innerText, 10) + 1}`
   startTimer = () => this.interval = setInterval(this.updateTimer, 10) 
+  stopTimer = () => clearInterval(this.interval)
   
   updateTimer = () => { 
     const str = `${parseInt(this.timer.innerText.replace(":", ""), 10) + 1}`

@@ -30,7 +30,8 @@ class CodeDisplay {
 
   handleTimer = () => {
     if (this.index === 0) { this.user.display.scoreDiv.startTimer() }
-}
+    if (this.index === this.line.length - 1 ) { this.user.display.scoreDiv.stopTimer() }
+  }
 
   updateColor = state => {
     if (state) {
