@@ -30,7 +30,6 @@ class ScoreDisplay {
     } else if (str.length < 3) {
       this.timer.innerText = `00:${str}`
     } else {
-      console.log(str.slice(0, str.length - 2))
       this.timer.innerText = str.slice(0, str.length - 2) + ":" + str.slice(str.length - 2, str.length)
     }
   }
