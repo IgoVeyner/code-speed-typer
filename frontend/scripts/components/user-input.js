@@ -23,10 +23,15 @@ class UserInput {
     // a lot more stuff...
 
     const inputTruthy = this.user.display.codeDisplay.checkInput(e.target.value)
-    this.user.display.codeDisplay.updateColor(inputTruthy)
-    if (inputTruthy === false) { this.user.display.scoreDiv.updateStrikes() }
+    const currentIndex = this.user.display.codeDisplay.index
+    const scoreDisplay = this.user.display.scoreDiv
 
-    this.user.score.updateScore()
+    if (currentIndex > 0) {
+      this.user.display.codeDisplay.updateColor(inputTruthy)
+      if (inputTruthy === false) { scoreDisplay.updateStrikes() }
+      this.user.score.updateScore()
+    }
+    
     e.target.value = ""
   }
 
