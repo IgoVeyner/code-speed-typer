@@ -10,8 +10,7 @@ class UserInput {
     input.addEventListener("input", this.inputEvent)
     this.main.appendChild(input)
     this.input = input
-    // TODO
-    // automagically put the user into the input
+    input.focus()
   }
 
   inputEvent = e => {
