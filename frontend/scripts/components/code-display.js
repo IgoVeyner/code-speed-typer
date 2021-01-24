@@ -32,7 +32,7 @@ class CodeDisplay {
     if (this.index === 0) { this.user.display.scoreDiv.startTimer() }
     if (this.index === this.line.length - 1 ) { 
       this.user.display.scoreDiv.stopTimer()
-      this.user.score.completed = true
+      this.user.score.completeGame()
      }
   }
 

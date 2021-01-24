@@ -25,4 +25,6 @@ class Score {
   }
 
   assignID = scoreData => this.id = scoreData.id 
+
+  completeGame = () => this.completed = true
 }
