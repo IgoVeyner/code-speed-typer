@@ -9,7 +9,7 @@ class UserInput {
     const input = document.createElement("input")
     input.addEventListener("input", this.inputEvent)
     this.main.appendChild(input)
-
+    this.input = input
     // TODO
     // automagically put the user into the input
   }
@@ -28,4 +28,11 @@ class UserInput {
     this.user.score.updateScore()
     e.target.value = ""
   }
+
+  disableInput = () => {
+    this.input.removeEventListener("input", this.inputEvent)
+    this.input.disabled = true
+  }
+
+
 }
