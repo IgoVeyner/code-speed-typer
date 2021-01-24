@@ -1,2 +1,10 @@
 .strike {color: red}
-.correct {color: green}
+.correct {color: #008000}
+.hidden {
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}

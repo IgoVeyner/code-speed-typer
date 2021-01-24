@@ -7,6 +7,7 @@ class UserInput {
 
   addUserInput = () => {
     const input = document.createElement("input")
+    input.classList.add("hidden")
     input.addEventListener("input", this.inputEvent)
     window.addEventListener("click", this.forceFocus)
     this.main.appendChild(input)
