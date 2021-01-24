@@ -16,15 +16,24 @@ class CodeDisplay {
     }
     this.main.appendChild(div)
     this.characters = div
+    this.characters.children[0].classList.add("current-input")
   }
 
   checkInput = input => {
     if (input === this.characters.children[this.index].innerText) {
+      this.moveUnderline()
       this.handleTimer()
       this.index += 1
       return true
     } else {
       return false
+    }
+  }
+
+  moveUnderline = () => {
+    this.characters.children[this.index].classList.remove("current-input")
+    if (this.index < this.characters.children.length - 1) {
+      this.characters.children[this.index + 1].classList.add("current-input")
     }
   }
 
