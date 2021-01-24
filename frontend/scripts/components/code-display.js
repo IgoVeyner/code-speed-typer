@@ -3,6 +3,7 @@ class CodeDisplay {
     this.main = main
     this.user = user
     this.line = this.user.code.line
+    this.index = 0
     this.createDisplay()
   }
 
@@ -14,5 +15,15 @@ class CodeDisplay {
       div.appendChild(span)
     }
     this.main.appendChild(div)
+    this.characters = div
+  }
+
+  checkInput = input => {
+    if (input === this.characters.children[this.index].innerText) {
+      this.index += 1
+      console.log("correct!")
+    } else {
+      console.log("try again!")
+    }
   }
 }

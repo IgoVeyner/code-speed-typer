@@ -15,12 +15,15 @@ class UserInput {
   }
 
   inputEvent = e => {
-    console.log("some event")
     // TODO
     // change the LoC styling
     // do patch request
     // check to see if the game is over
     // a lot more stuff...
+
+    const state = this.user.display.codeDisplay.checkInput(e.target.value)
+
     this.user.score.updateScore()
+    e.target.value = ""
   }
 }
