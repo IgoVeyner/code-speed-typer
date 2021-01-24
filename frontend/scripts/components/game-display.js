@@ -8,15 +8,8 @@ class GameDisplay {
   createDisplay = () => {
     this.nameplate = new Nameplate(this.main, this.user)
     this.scoreDiv = new ScoreDisplay(this.main, this.user)
-    this.addLoC()
+    this.codeDisplay = new CodeDisplay(this.main, this.user)
     this.addUserInput()
-  }
-
-  addLoC = () => {
-    // TODO
-    // add backend loc resource
-    // add frontend loc class
-    console.log("adding line of code...")
   }
 
   addUserInput = () => {
