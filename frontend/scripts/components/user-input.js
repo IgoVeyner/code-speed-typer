@@ -51,8 +51,6 @@ class UserInput {
 
   tryAgain = e => { this.user.resetGame() }
 
-  newRandom = e => {
-    console.log("new random")
-  }
+  newRandom = e => this.user.newRandomGame()
 
 }

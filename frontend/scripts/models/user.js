@@ -27,4 +27,9 @@ class User {
     this.createScore()
     this.createGameDisplay()
   }
+
+  newRandomGame = () => {
+    this.display.reset()
+    this.createCode()
+  }
 }
