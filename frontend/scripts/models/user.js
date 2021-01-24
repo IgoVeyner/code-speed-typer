@@ -21,4 +21,10 @@ class User {
   createCode = () => this.code = new Code(this)
   createScore = () => this.score = new Score(this)
   createGameDisplay = () => this.display = new GameDisplay(this)
+
+  resetGame = () => {
+    this.display.main.innerText = ""
+    this.createScore()
+    this.createGameDisplay()
+  }
 }

@@ -49,9 +49,7 @@ class UserInput {
     }
   }
 
-  tryAgain = e => {
-    console.log("try again")
-  }
+  tryAgain = e => { this.user.resetGame() }
 
   newRandom = e => {
     console.log("new random")
