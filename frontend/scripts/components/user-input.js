@@ -8,6 +8,7 @@ class UserInput {
   addUserInput = () => {
     const input = document.createElement("input")
     input.addEventListener("input", this.inputEvent)
+    window.addEventListener("click", this.forceFocus)
     this.main.appendChild(input)
     this.input = input
     input.focus()
@@ -27,6 +28,8 @@ class UserInput {
     this.user.score.updateScore()
     e.target.value = ""
   }
+
+  forceFocus = () => this.input.focus() 
 
   disableInput = () => {
     this.input.removeEventListener("input", this.inputEvent)
