@@ -22,8 +22,10 @@ class CodeDisplay {
     if (input === this.characters.children[this.index].innerText) {
       this.index += 1
       console.log("correct!")
+      return true
     } else {
       console.log("try again!")
+      return false
     }
   }
 }
