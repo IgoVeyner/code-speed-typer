@@ -23,7 +23,7 @@ class User {
   createGameDisplay = () => this.display = new GameDisplay(this)
 
   resetGame = () => {
-    this.display.main.innerText = ""
+    this.display.reset()
     this.createScore()
     this.createGameDisplay()
   }

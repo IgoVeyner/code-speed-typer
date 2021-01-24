@@ -7,4 +7,6 @@ class GameDisplay {
     this.codeDisplay = new CodeDisplay(this.main, this.user)
     this.userInput = new UserInput(this.main, this.user)
   }
+
+  reset = () => this.main.innerText = ""
 }
