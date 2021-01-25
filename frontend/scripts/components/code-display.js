@@ -42,6 +42,7 @@ class CodeDisplay {
       user.score.completeGame()
       user.display.userInput.disableInput()
       user.display.userInput.createButtons()
+      user.score.updateScore()
      }
   }
 

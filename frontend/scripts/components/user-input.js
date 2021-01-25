@@ -27,7 +27,6 @@ class UserInput {
     if (currentIndex > 0) {
       user.display.codeDisplay.updateColor(inputTruthy)
       if (inputTruthy === false) { scoreDisplay.updateStrikes() }
-      user.score.updateScore()
     }
     
     e.target.value = ""
