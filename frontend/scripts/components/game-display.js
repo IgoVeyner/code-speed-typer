@@ -6,5 +6,12 @@ class GameDisplay {
     this.userInput = new UserInput
   }
 
+  finishGame = () => {
+    user.score.completeGame()
+    user.display.userInput.disableInput()
+    user.display.userInput.createButtons()
+    user.score.updateScore()
+  }
+  
   reset = () => main.innerText = ""
 }

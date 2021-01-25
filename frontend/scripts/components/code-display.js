@@ -39,10 +39,7 @@ class CodeDisplay {
     if (this.index === 0) { user.display.scoreDiv.startTimer() }
     if (this.index === this.line.length - 1 ) { 
       user.display.scoreDiv.stopTimer()
-      user.score.completeGame()
-      user.display.userInput.disableInput()
-      user.display.userInput.createButtons()
-      user.score.updateScore()
+      user.display.finishGame()
      }
   }
 
