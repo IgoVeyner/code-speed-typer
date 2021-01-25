@@ -34,19 +34,33 @@ class UserInput {
   }
 
   createButtons = () => {
-    const elementsToCreate = ["button", "button"]
-    const [tryAgain, newRandom] = elementsToCreate.map(element => document.createElement(element))
+    const elementsToCreate = ["div", "div", "h3", "h3", "p", "p", "button", "button"]
+    const [btn1Container, btn2Container, header1, header2, info1, info2, tryAgain, newRandom] = elementsToCreate.map(element => document.createElement(element))
     
+    header1.innerText = "Try Again"
+    header2.innerText = "Random"
+
+    info1.innerText = "(backspace)"
+    info2.innerText = "(enter)"
+
     tryAgain.style.background = "url(./assets/backspace.png)"
     newRandom.style.background = "url(./assets/enter.png)"
+
+    for(const element of [tryAgain, newRandom]) { element.classList.add("button") }
+
+    btn1Container.appendChild(header1)
+    btn2Container.appendChild(header2)
+
+    btn1Container.appendChild(tryAgain)
+    btn2Container.appendChild(newRandom)
+
+    btn1Container.appendChild(info1)
+    btn2Container.appendChild(info2)
 
     tryAgain.addEventListener("click", this.tryAgain)
     newRandom.addEventListener("click", this.newRandom)
 
-    for(const element of [tryAgain, newRandom]) {
-      element.classList.add("button")
-      main.appendChild(element)
-    }
+    for(const element of [btn1Container, btn2Container]) { main.appendChild(element) }
   }
 
   tryAgain = () => user.resetGame()
