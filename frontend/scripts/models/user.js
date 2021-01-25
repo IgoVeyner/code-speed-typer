@@ -1,5 +1,4 @@
 class User {
-
   constructor() {
     this.display = new LoginForm(this)
   }
