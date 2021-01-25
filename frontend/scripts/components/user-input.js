@@ -44,9 +44,7 @@ class UserInput {
     newRandom.addEventListener("click", this.newRandom)
 
     for(const element of [tryAgain, newRandom]) {
-      element.style.width = "80px"
-      element.style.height = "80px"
-      element.style.border = "none"
+      element.classList.add("button")
       main.appendChild(element)
     }
   }
