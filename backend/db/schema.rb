@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_232733) do
+ActiveRecord::Schema.define(version: 2021_01_25_232828) do
 
   create_table "codes", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_232733) do
   create_table "scores", force: :cascade do |t|
     t.integer "time", default: 0
     t.integer "strikes", default: 0
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.integer "user_id"
     t.integer "code_id"
     t.datetime "created_at", precision: 6, null: false
