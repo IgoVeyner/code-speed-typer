@@ -37,13 +37,20 @@ class UserInput {
     const elementsToCreate = ["button", "button"]
     const [tryAgain, newRandom] = elementsToCreate.map(element => document.createElement(element))
     
-    tryAgain.innerText = "Try Again"
-    newRandom.innerText = "Random"
+    // tryAgain.innerText = "Try Again"
+    // newRandom.innerText = "Random"
+    tryAgain.style.background = "url(./assets/backspace.png)"
+    newRandom.style.background = "url(./assets/enter.png)"
+
+
 
     tryAgain.addEventListener("click", this.tryAgain)
     newRandom.addEventListener("click", this.newRandom)
 
     for(const element of [tryAgain, newRandom]) {
+      element.style.width = "80px"
+      element.style.height = "80px"
+      element.style.border = "none"
       main.appendChild(element)
     }
   }
