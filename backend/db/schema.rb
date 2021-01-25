@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_232340) do
 
   create_table "scores", force: :cascade do |t|
     t.integer "time"
-    t.string "strikes", default: "0"
+    t.integer "strikes", default: 0
     t.boolean "completed"
     t.integer "user_id"
     t.integer "code_id"
