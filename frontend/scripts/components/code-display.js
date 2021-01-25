@@ -1,20 +1,28 @@
 class CodeDisplay {
   constructor() {
     this.line = user.code.line
+    this.headerText = user.code.name
     this.index = 0
     this.createDisplay()
   }
 
   createDisplay = () => {
     const div = document.createElement("div")
+    const h2 = document.createElement("h2")
+
+    h2.innerText = this.headerText
+    div.appendChild(h2)
+
     for (const char of this.line){
       const span = document.createElement("span")
       span.innerText = char
       div.appendChild(span)
     }
+
     main.appendChild(div)
+
     this.characters = div
-    this.characters.children[0].classList.add("current-input")
+    this.characters.children[1].classList.add("current-input")
   }
 
   checkInput = input => {
