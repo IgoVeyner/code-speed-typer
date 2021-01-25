@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_23_171917) do
+ActiveRecord::Schema.define(version: 2021_01_25_232340) do
 
   create_table "codes", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_171917) do
 
   create_table "scores", force: :cascade do |t|
     t.integer "time"
-    t.integer "strikes"
+    t.string "strikes", default: "0"
     t.boolean "completed"
     t.integer "user_id"
     t.integer "code_id"
