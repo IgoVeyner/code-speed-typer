@@ -2,7 +2,7 @@ class CodeDisplay {
   constructor() {
     this.line = user.code.line
     this.headerText = user.code.name
-    this.index = 0
+    this.index = 1
     this.createDisplay()
   }
 
@@ -44,8 +44,8 @@ class CodeDisplay {
   }
 
   handleTimer = () => {
-    if (this.index === 0) { user.display.scoreDiv.startTimer() }
-    if (this.index === this.line.length - 1 ) { 
+    if (this.index === 1) { user.display.scoreDiv.startTimer() }
+    if (this.index === this.line.length ) { 
       user.display.scoreDiv.stopTimer()
       user.display.finishGame()
      }

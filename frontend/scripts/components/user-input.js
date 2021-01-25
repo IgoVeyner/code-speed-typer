@@ -24,7 +24,7 @@ class UserInput {
     const currentIndex = user.display.codeDisplay.index
     const scoreDisplay = user.display.scoreDiv
 
-    if (currentIndex > 0) {
+    if (currentIndex > 1) {
       user.display.codeDisplay.updateColor(inputTruthy)
       if (inputTruthy === false) { scoreDisplay.updateStrikes() }
     }
