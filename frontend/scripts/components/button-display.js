@@ -20,8 +20,8 @@ class ButtonDisplay {
     for(const element of [header1, tryAgain, info1]) { btn1Container.appendChild(element)}
     for(const element of [header2, newRandom, info2]) { btn2Container.appendChild(element)}
 
-    tryAgain.addEventListener("click", this.tryAgain)
-    newRandom.addEventListener("click", this.newRandom)
+    tryAgain.addEventListener("click", () => user.resetGame())
+    newRandom.addEventListener("click", () => user.newRandomGame())
 
     for(const element of [btn1Container, btn2Container]) { 
       element.classList.add("button-container")
@@ -33,10 +33,7 @@ class ButtonDisplay {
 
   keydownHandler = e => {
     if (e.keyCode === 13 || e.keyCode === 8) { window.removeEventListener("keydown", this.keydownHandler)}
-    if (e.keyCode === 8) { this.tryAgain() }
-    if (e.keyCode === 13) { this.newRandom() }
+    if (e.keyCode === 8) { user.resetGame() }
+    if (e.keyCode === 13) { user.newRandomGame() }
   }
-
-  tryAgain = () => user.resetGame()
-  newRandom = () => user.newRandomGame()
 }
