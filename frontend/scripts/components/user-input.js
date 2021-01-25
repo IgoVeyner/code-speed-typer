@@ -14,12 +14,6 @@ class UserInput {
   }
 
   inputEvent = e => {
-    // TODO
-    // change the LoC styling
-    // do patch request
-    // check to see if the game is over
-    // a lot more stuff...
-
     const inputTruthy = user.display.codeDisplay.checkInput(e.target.value)
     const currentIndex = user.display.codeDisplay.index
     const scoreDisplay = user.display.scoreDiv
