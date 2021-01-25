@@ -47,15 +47,8 @@ class UserInput {
     newRandom.style.background = "url(./assets/enter.png)"
 
     for(const element of [tryAgain, newRandom]) { element.classList.add("button") }
-
-    btn1Container.appendChild(header1)
-    btn2Container.appendChild(header2)
-
-    btn1Container.appendChild(tryAgain)
-    btn2Container.appendChild(newRandom)
-
-    btn1Container.appendChild(info1)
-    btn2Container.appendChild(info2)
+    for(const element of [header1, tryAgain, info1]) { btn1Container.appendChild(element)}
+    for(const element of [header2, newRandom, info2]) { btn2Container.appendChild(element)}
 
     tryAgain.addEventListener("click", this.tryAgain)
     newRandom.addEventListener("click", this.newRandom)
