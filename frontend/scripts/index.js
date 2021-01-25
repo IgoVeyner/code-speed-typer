@@ -1,1 +1,2 @@
-let user = new User
+const api = new API
+const user = new User

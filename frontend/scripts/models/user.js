@@ -1,12 +1,11 @@
 class User {
 
   constructor() {
-    this.api = new API
     this.display = new LoginForm(this)
   }
 
   postUser = username => {
-    this.api.postUser(username)
+    api.postUser(username)
     .then(data => {
       this.updateInfo(data)
       this.createCode()

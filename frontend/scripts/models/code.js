@@ -5,7 +5,7 @@ class Code {
   }
 
   getCode = () => {
-    this.user.api.fetchRandomCode()
+    api.fetchRandomCode()
     .then(this.handleData)
   }
 
