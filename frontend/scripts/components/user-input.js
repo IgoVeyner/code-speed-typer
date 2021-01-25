@@ -54,6 +54,14 @@ class UserInput {
     newRandom.addEventListener("click", this.newRandom)
 
     for(const element of [btn1Container, btn2Container]) { main.appendChild(element) }
+
+    window.addEventListener("keydown", this.keydownHandler)
+  }
+
+  keydownHandler = e => {
+    if (e.keyCode === 13 || e.keyCode === 8) { window.removeEventListener("keydown", this.keydownHandler)}
+    if (e.keyCode === 8) { this.tryAgain() }
+    if (e.keyCode === 13) { this.newRandom() }
   }
 
   tryAgain = () => user.resetGame()
