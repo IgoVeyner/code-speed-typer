@@ -1,6 +1,5 @@
 class ScoreDisplay {
-  constructor(main) {
-    this.main = main
+  constructor() {
     this.createDisplay()
   }
 
@@ -14,7 +13,7 @@ class ScoreDisplay {
 
     strikes.appendChild(num)
     for (const element of [timer, strikes]) { container.appendChild(element) }
-    this.main.appendChild(container)
+    main.appendChild(container)
 
     this.timer = timer
     this.num = num

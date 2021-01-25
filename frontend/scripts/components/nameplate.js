@@ -1,6 +1,5 @@
 class Nameplate {
-  constructor(main) {
-    this.main = main
+  constructor() {
     this.createNameplate()
   }
 
@@ -11,6 +10,6 @@ class Nameplate {
     username.innerText = user.username
 
     usernameContainer.appendChild(username)
-    this.main.appendChild(usernameContainer)
+    main.appendChild(usernameContainer)
   }
 }

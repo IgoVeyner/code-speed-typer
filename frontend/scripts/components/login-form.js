@@ -1,6 +1,5 @@
 class LoginForm {
   constructor() {
-    this.main = document.querySelector("main")
     this.createForm()
   } 
 
@@ -15,7 +14,7 @@ class LoginForm {
     form.addEventListener("submit", this.postToUsers)
 
     for (const element of [header, input, submit]) { form.appendChild(element) }
-    this.main.appendChild(form)
+    main.appendChild(form)
   }
 
   postToUsers = e => {
@@ -25,6 +24,6 @@ class LoginForm {
     user.postUser(username)
   }
 
-  deleteForm = () => this.main.innerHTML = ""
+  deleteForm = () => main.innerHTML = ""
 
 }

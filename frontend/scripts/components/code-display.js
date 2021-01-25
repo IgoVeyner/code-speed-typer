@@ -1,6 +1,5 @@
 class CodeDisplay {
-  constructor(main) {
-    this.main = main
+  constructor() {
     this.line = user.code.line
     this.index = 0
     this.createDisplay()
@@ -13,7 +12,7 @@ class CodeDisplay {
       span.innerText = char
       div.appendChild(span)
     }
-    this.main.appendChild(div)
+    main.appendChild(div)
     this.characters = div
     this.characters.children[0].classList.add("current-input")
   }

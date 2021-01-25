@@ -1,6 +1,5 @@
 class UserInput {
-  constructor(main) {
-    this.main = main
+  constructor() {
     this.addUserInput()
   }
 
@@ -9,7 +8,7 @@ class UserInput {
     input.classList.add("hidden")
     input.addEventListener("input", this.inputEvent)
     window.addEventListener("click", this.forceFocus)
-    this.main.appendChild(input)
+    main.appendChild(input)
     this.input = input
     input.focus()
   }
@@ -52,7 +51,7 @@ class UserInput {
     newRandom.addEventListener("click", this.newRandom)
 
     for(const element of [tryAgain, newRandom]) {
-      this.main.appendChild(element)
+      main.appendChild(element)
     }
   }
 
