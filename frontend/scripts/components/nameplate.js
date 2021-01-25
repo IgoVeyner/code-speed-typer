@@ -1,7 +1,6 @@
 class Nameplate {
-  constructor(main, user) {
+  constructor(main) {
     this.main = main
-    this.user = user
     this.createNameplate()
   }
 
@@ -9,7 +8,7 @@ class Nameplate {
     const elementsToCreate = ["div", "h2"]
     const [usernameContainer, username] = elementsToCreate.map(element => document.createElement(element))
 
-    username.innerText = this.user.username
+    username.innerText = user.username
 
     usernameContainer.appendChild(username)
     this.main.appendChild(usernameContainer)

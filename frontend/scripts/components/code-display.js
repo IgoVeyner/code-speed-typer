@@ -1,8 +1,7 @@
 class CodeDisplay {
-  constructor(main, user) {
+  constructor(main) {
     this.main = main
-    this.user = user
-    this.line = this.user.code.line
+    this.line = user.code.line
     this.index = 0
     this.createDisplay()
   }
@@ -38,12 +37,12 @@ class CodeDisplay {
   }
 
   handleTimer = () => {
-    if (this.index === 0) { this.user.display.scoreDiv.startTimer() }
+    if (this.index === 0) { user.display.scoreDiv.startTimer() }
     if (this.index === this.line.length - 1 ) { 
-      this.user.display.scoreDiv.stopTimer()
-      this.user.score.completeGame()
-      this.user.display.userInput.disableInput()
-      this.user.display.userInput.createButtons()
+      user.display.scoreDiv.stopTimer()
+      user.score.completeGame()
+      user.display.userInput.disableInput()
+      user.display.userInput.createButtons()
      }
   }
 

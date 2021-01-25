@@ -1,13 +1,12 @@
 class Score {
-  constructor(user) {
-    this.user = user
+  constructor() {
     this.time = 0
     this.strikes = 0
     this.completed = false
     this.createScore()
   }
 
-  createScore = () => api.postScore(this.user.id, this.user.code.id).then(this.assignID) 
+  createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
   
   updateScore = () => {
     [this.time, this.strikes] = this.getCurrentScore()
@@ -15,8 +14,8 @@ class Score {
   }
 
   getCurrentScore = () => {
-    let timer = this.user.display.scoreDiv.timer.innerText
-    let strikes = this.user.display.scoreDiv.num.innerText
+    let timer = user.display.scoreDiv.timer.innerText
+    let strikes = user.display.scoreDiv.num.innerText
 
     timer = parseInt(timer.replace(":", ""), 10) * 10
     strikes = parseInt(strikes)    

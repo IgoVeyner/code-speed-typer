@@ -1,7 +1,6 @@
 class UserInput {
-  constructor(main, user) {
+  constructor(main) {
     this.main = main
-    this.user = user
     this.addUserInput()
   }
 
@@ -22,14 +21,14 @@ class UserInput {
     // check to see if the game is over
     // a lot more stuff...
 
-    const inputTruthy = this.user.display.codeDisplay.checkInput(e.target.value)
-    const currentIndex = this.user.display.codeDisplay.index
-    const scoreDisplay = this.user.display.scoreDiv
+    const inputTruthy = user.display.codeDisplay.checkInput(e.target.value)
+    const currentIndex = user.display.codeDisplay.index
+    const scoreDisplay = user.display.scoreDiv
 
     if (currentIndex > 0) {
-      this.user.display.codeDisplay.updateColor(inputTruthy)
+      user.display.codeDisplay.updateColor(inputTruthy)
       if (inputTruthy === false) { scoreDisplay.updateStrikes() }
-      this.user.score.updateScore()
+      user.score.updateScore()
     }
     
     e.target.value = ""
@@ -57,6 +56,6 @@ class UserInput {
     }
   }
 
-  tryAgain = () => this.user.resetGame()
-  newRandom = () => this.user.newRandomGame()
+  tryAgain = () => user.resetGame()
+  newRandom = () => user.newRandomGame()
 }

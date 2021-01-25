@@ -1,6 +1,5 @@
 class LoginForm {
-  constructor(user) {
-    this.user = user
+  constructor() {
     this.main = document.querySelector("main")
     this.createForm()
   } 
@@ -23,7 +22,7 @@ class LoginForm {
     e.preventDefault()
     const username = document.querySelector("input").value
     this.deleteForm()
-    this.user.postUser(username)
+    user.postUser(username)
   }
 
   deleteForm = () => this.main.innerHTML = ""

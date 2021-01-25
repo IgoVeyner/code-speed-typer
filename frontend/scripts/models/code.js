@@ -1,6 +1,5 @@
 class Code {
-  constructor(user) {
-    this.user = user
+  constructor() {
     this.getCode()
   }
 
@@ -18,7 +17,7 @@ class Code {
     //  otherwise score creation will not have a code_id to send
     //  and it does not get created in the DB
 
-    this.user.createScore()
-    this.user.createGameDisplay()
+    user.createScore()
+    user.createGameDisplay()
   }
 }

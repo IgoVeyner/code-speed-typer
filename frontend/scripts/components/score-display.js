@@ -1,5 +1,5 @@
 class ScoreDisplay {
-  constructor(main, user) {
+  constructor(main) {
     this.main = main
     this.createDisplay()
   }
