@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def create
     user = User.create(user_params)
-    render json: user
+    render json: UserSerializer.new(user).serializable_hash
   end
 
   private

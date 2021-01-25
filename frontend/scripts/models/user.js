@@ -11,9 +11,9 @@ class User {
     })
   }
 
-  updateInfo = data => {
-    this.id = data.id
-    this.username = data.name
+  updateInfo = obj => {
+    this.id = obj.data.id
+    this.username = obj.data.attributes.name
   }
 
   createCode = () => this.code = new Code(this)
