@@ -11,7 +11,7 @@ class Code {
   handleData = codeData => {
     this.id = codeData.id
     this.line = codeData.line
-    this.name = codeData.line
+    this.name = codeData.name
 
     // Create Score needs to run after the above data is assigned,
     //  otherwise score creation will not have a code_id to send
