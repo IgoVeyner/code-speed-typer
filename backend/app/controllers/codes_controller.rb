@@ -16,7 +16,7 @@ class CodesController < ApplicationController
     @code = find_code(num)
 
     if @code
-      render json: @code
+      render json: CodeSerializer.new(@code)
     else
       render json: {error: "Sorry, there is no code with that ID", status: 400}, status: 400
     end
