@@ -16,7 +16,7 @@ class Score {
   updateScore = () => {
     [this.time, this.strikes] = this.getCurrentScore()
     api.updateScore(this.id, this.time, this.strikes, this.completed)
-    .then(() => user.code.highestScore ? user.score.compareToHighscore() : api.postHighscore(user.code.id, user.score.id)
+    .then(() => user.code.highestScore ? this.compareToHighscore() : api.postHighscore(user.code.id, user.score.id)
     )
   }
 
