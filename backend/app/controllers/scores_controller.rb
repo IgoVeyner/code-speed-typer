@@ -16,8 +16,11 @@ class ScoresController < ApplicationController
 
   def update
     if @score
-      @score.update(score_params)
-      render json: ScoreSerializer.new(@score)
+      if @score.update(score_params)
+        render json: ScoreSerializer.new(@score)
+      else
+        render json: {error: @score.errors.full_messages, status: 400}, status: 400
+      end
     else
       render json: {error: "Sorry, there is no score with that ID", status: 400}, status: 400
     end
