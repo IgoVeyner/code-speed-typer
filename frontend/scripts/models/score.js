@@ -45,11 +45,9 @@ class Score {
     const currentScore = user.score
 
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
-      console.log("faster")
       api.updateHighscore(user.code.currentHighscoreID, this.id)
       new ScoreDisplay(currentScore)
     } else {
-      console.log("not faster")
       new ScoreDisplay(highscore)
     }
   }

@@ -43,7 +43,6 @@ class ScoreDisplay {
     const elementsToCreate = ["div", "h1", "h1", "h2", "span"]
     const [container, header, timer, strikes, num] = elementsToCreate.map(element => document.createElement(element))
 
-    console.log(score)
     let time = `${score.time / 10}`
     strikes.innerText = "Strikes: "
     num.innerText = `${score.strikes}`
