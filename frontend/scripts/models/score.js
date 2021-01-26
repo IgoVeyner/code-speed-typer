@@ -49,6 +49,7 @@ class Score {
 
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
       console.log("faster")
+      api.updateHighscore(highscore.id, this.id)
       // TODO: 
       // call the api to update the id of highest score
       // create that api fetch request

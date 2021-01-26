@@ -96,4 +96,15 @@ class API {
     })
     .then(this.parseJSON)
   }
+
+  updateHighscore = (id, score_id) => {
+    return fetch(this.highscoreURL + `/${id}`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify({ highscore: {
+        score_id: score_id
+      }})
+    })
+    .then(this.parseJSON)
+  }
 }
