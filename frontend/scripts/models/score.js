@@ -47,10 +47,12 @@ class Score {
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
       console.log("faster")
       api.updateHighscore(user.code.currentHighscoreID, this.id)
+      new ScoreDisplay(currentScore)
       // TODO: 
       // create a score display and append to the DOM
     } else {
       console.log("not faster")
+      new ScoreDisplay(highscore)
     }
   }
 }

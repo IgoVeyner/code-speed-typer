@@ -1,6 +1,6 @@
 class ScoreDisplay {
-  constructor() {
-    this.createDisplay()
+  constructor(score) {
+    score ? this.createFromScore(score) : this.createDisplay()
   }
 
   createDisplay = () => {
@@ -35,6 +35,34 @@ class ScoreDisplay {
       this.timer.innerText = seconds + ":" + str.slice(str.length - 2, str.length)
     } else {
       this.stopTimer()
+      this.timer.innerText == "99:99"
+    }
+  }
+
+  createFromScore = score => {
+    const elementsToCreate = ["div", "h1", "h2", "span"]
+    const [container, timer, strikes, num] = elementsToCreate.map(element => document.createElement(element))
+
+    let time = `${score.time / 10}`
+    strikes.innerText = "Strikes: "
+    num.innerText = `${score.strikes}`
+
+    this.timer = timer
+    this.num = num
+
+    strikes.appendChild(num)
+    for (const element of [timer, strikes]) { container.appendChild(element) }
+    main.appendChild(container)
+
+    if (time.length < 2) {
+      this.timer.innerText = `00:0${time}`
+    } else if (time.length < 3) {
+      this.timer.innerText = `00:${time}`
+    } else if (time.length < 5) {
+      let seconds = time.slice(0, time.length - 2)
+      if (seconds.length == 1) { seconds = `0${seconds}`} 
+      this.timer.innerText = seconds + ":" + time.slice(time.length - 2, time.length)
+    } else {
       this.timer.innerText == "99:99"
     }
   }
