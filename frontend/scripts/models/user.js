@@ -16,9 +16,9 @@ class User {
     this.username = obj.data.attributes.name
   }
 
-  createCode = () => this.code = new Code(this)
-  createScore = () => this.score = new Score(this)
-  createGameDisplay = () => this.display = new GameDisplay(this)
+  createCode = () => this.code = new Code()
+  createScore = () => this.score = new Score()
+  createGameDisplay = () => this.display = new GameDisplay()
 
   resetGame = () => {
     this.display.reset()
