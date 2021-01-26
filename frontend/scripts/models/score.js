@@ -1,9 +1,14 @@
 class Score {
-  constructor() {
+  constructor(id) {
     this.time = 0
     this.strikes = 0
     this.completed = false
-    this.createScore()
+    if (id !== undefined) {
+      // create a score from a current score id
+      console.log("TODO: create a score from a known id")
+    } else {
+      this.createScore()
+    }
   }
 
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
