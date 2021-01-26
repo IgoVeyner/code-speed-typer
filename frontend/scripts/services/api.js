@@ -75,12 +75,6 @@ class API {
 
   // Code Requests
 
-  // might not need this, depending on how highscore sends its data
-  fetchCode = id => {
-    return fetch(this.codeURL + `/${id}`)
-    .then(this.parseJSON)
-  }
-
   fetchRandomCode = () => {
     return fetch(this.codeURL + `/random`)
     .then(this.parseJSON)
