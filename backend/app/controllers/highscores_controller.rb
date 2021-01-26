@@ -1,4 +1,6 @@
 class HighscoresController < ApplicationController
+  before_action :find_highscore, only: [:update]
+
   def create
     highscore = Highscore.create(highscore_params)
     render json: HighscoreSerializer.new(highscore)
