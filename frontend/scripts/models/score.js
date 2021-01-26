@@ -51,9 +51,6 @@ class Score {
       console.log("faster")
       api.updateHighscore(user.code.currentHighscoreID, this.id)
       // TODO: 
-      // call the api to update the id of highest score
-      // create that api fetch request
-      // create that update action in highscores controller
       // create a score display and append to the DOM
     } else {
       console.log("not faster")
