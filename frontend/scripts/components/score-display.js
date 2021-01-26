@@ -40,15 +40,20 @@ class ScoreDisplay {
   }
 
   createFromScore = score => {
-    const elementsToCreate = ["div", "h1", "h2", "span"]
-    const [container, timer, strikes, num] = elementsToCreate.map(element => document.createElement(element))
+    const elementsToCreate = ["div", "h1", "h1", "h2", "span"]
+    const [container, header, timer, strikes, num] = elementsToCreate.map(element => document.createElement(element))
 
+    console.log(score)
     let time = `${score.time / 10}`
     strikes.innerText = "Strikes: "
     num.innerText = `${score.strikes}`
+    header.innerText = "Highscore"
 
     this.timer = timer
     this.num = num
+    container.appendChild(header)
+
+    score.username ? this.add_username(score.username, container) : this.add_username(user.name, container)
 
     strikes.appendChild(num)
     for (const element of [timer, strikes]) { container.appendChild(element) }
@@ -66,4 +71,12 @@ class ScoreDisplay {
       this.timer.innerText == "99:99"
     }
   }
+
+  add_username = (username, div) => {
+    const h3 = document.createElement("h3")
+    h3.innerText = username
+    div.appendChild(h3)
+    return div
+  }
+
 }
