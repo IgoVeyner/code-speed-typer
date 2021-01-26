@@ -11,7 +11,6 @@ class GameDisplay {
     user.display.userInput.disableInput()
     user.display.buttons = new ButtonDisplay
     user.score.updateScore()
-    user.code.highestScore ? user.score.compareToHighscore() : api.postHighscore(user.code.id, user.score.id)
   }
   
   reset = () => main.innerText = ""
