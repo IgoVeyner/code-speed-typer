@@ -27,6 +27,7 @@ class API {
   get userURL() { return this.url + '/users' }
   get scoreURL() { return this.url + '/scores' }
   get codeURL() { return this.url + '/codes' }
+  get highscoreURL() {return this.url + '/highscores'}
 
   // User Requests
 
@@ -77,6 +78,22 @@ class API {
 
   fetchRandomCode = () => {
     return fetch(this.codeURL + `/random`)
+    .then(this.parseJSON)
+  }
+
+  // Highscore Requests
+
+  postHighscore = (code_id, score_id) => {
+    return fetch(this.highscoreURL, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify({
+        score: {
+          score_id: score_id,
+          code_id: code_id
+        } 
+      })
+    })
     .then(this.parseJSON)
   }
 }
