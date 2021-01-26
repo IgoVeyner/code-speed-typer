@@ -49,12 +49,14 @@ class Score {
 
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
       console.log("faster")
-      api.updateHighscore(highscore.id, this.id)
+      api.updateHighscore(user.code.currentHighscoreID, this.id)
       // TODO: 
       // call the api to update the id of highest score
       // create that api fetch request
       // create that update action in highscores controller
       // create a score display and append to the DOM
+    } else {
+      console.log("not faster")
     }
   }
 }
