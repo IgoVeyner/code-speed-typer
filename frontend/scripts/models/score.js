@@ -36,7 +36,6 @@ class Score {
   // TODO:
   // when game is over check against the current score
   // update highscore if its larger I suppose
-  // might be able to refactor the helper in score controller
   
   createScoreFromId = () => {
     api.fetchScore(this.id)
