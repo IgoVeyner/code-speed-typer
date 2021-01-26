@@ -3,12 +3,7 @@ class Score {
     this.time = 0
     this.strikes = 0
     this.completed = false
-    if (id !== undefined) {
-      this.id = id
-      this.createScoreFromId()
-    } else {
-      this.createScore()
-    }
+    id !== undefined ? this.createScoreFromId(id) : this.createScore()
   }
 
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
@@ -34,8 +29,10 @@ class Score {
 
   completeGame = () => this.completed = true
   
-  createScoreFromId = () => {
-    api.fetchScore(this.id)
+  createScoreFromId = id => {
+    this.id = id
+
+    api.fetchScore(id)
     .then(scoreData => { 
       this.username = scoreData.included[0].attributes.name
       this.time = scoreData.data.attributes.time
