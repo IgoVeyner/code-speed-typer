@@ -48,8 +48,6 @@ class Score {
       console.log("faster")
       api.updateHighscore(user.code.currentHighscoreID, this.id)
       new ScoreDisplay(currentScore)
-      // TODO: 
-      // create a score display and append to the DOM
     } else {
       console.log("not faster")
       new ScoreDisplay(highscore)
