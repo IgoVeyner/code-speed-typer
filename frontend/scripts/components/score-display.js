@@ -29,8 +29,13 @@ class ScoreDisplay {
       this.timer.innerText = `00:0${str}`
     } else if (str.length < 3) {
       this.timer.innerText = `00:${str}`
+    } else if (str.length < 5) {
+      let seconds = str.slice(0, str.length - 2)
+      if (seconds.length == 1) { seconds = `0${seconds}`} 
+      this.timer.innerText = seconds + ":" + str.slice(str.length - 2, str.length)
     } else {
-      this.timer.innerText = str.slice(0, str.length - 2) + ":" + str.slice(str.length - 2, str.length)
+      this.stopTimer()
+      this.timer.innerText == "99:99"
     }
   }
 }
