@@ -8,7 +8,8 @@ class ScoresController < ApplicationController
 
   def show
     if @score
-      render json: ScoreSerializer.new(@score)
+      options = {include: [:user]}
+      render json: ScoreSerializer.new(@score, options)
     else
       render json: {error: "Sorry, there is no score with that ID", status: 400}, status: 400
     end

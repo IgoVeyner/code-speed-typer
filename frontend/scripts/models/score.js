@@ -34,7 +34,6 @@ class Score {
   completeGame = () => this.completed = true
 
   // TODO:
-  // add the user data to the serializer to get the name of the user im looking for
   // when game is over check against the current score
   // update highscore if its larger I suppose
   // might be able to refactor the helper in score controller
@@ -42,6 +41,7 @@ class Score {
   createScoreFromId = () => {
     api.fetchScore(this.id)
     .then(scoreData => { 
+      this.username = scoreData.included[0].attributes.name
       this.timer = scoreData.data.time
       this.strikes = scoreData.data.strikes
     })
