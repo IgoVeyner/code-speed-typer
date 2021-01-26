@@ -4,7 +4,6 @@ class Score {
     this.strikes = 0
     this.completed = false
     if (id !== undefined) {
-      // create a score from a current score id
       this.id = id
       this.createScoreFromId()
     } else {
@@ -32,10 +31,6 @@ class Score {
   assignID = scoreData => this.id = scoreData.id 
 
   completeGame = () => this.completed = true
-
-  // TODO:
-  // when game is over check against the current score
-  // update highscore if its larger I suppose
   
   createScoreFromId = () => {
     api.fetchScore(this.id)
