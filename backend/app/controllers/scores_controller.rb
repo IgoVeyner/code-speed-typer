@@ -43,9 +43,6 @@ class ScoresController < ApplicationController
 
     if code.highscores == []
       code.highscores << Highscore.create(code_id: code.id, score_id: @score.id)
-    else
-      # check if the current score is better than the current highscore
-      # update appropriately 
     end
   end
 end
