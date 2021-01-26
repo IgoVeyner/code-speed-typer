@@ -5,7 +5,8 @@ class Score {
     this.completed = false
     if (id !== undefined) {
       // create a score from a current score id
-      console.log("TODO: create a score from a known id")
+      this.id = id
+      this.createScoreFromId()
     } else {
       this.createScore()
     }
@@ -31,4 +32,18 @@ class Score {
   assignID = scoreData => this.id = scoreData.id 
 
   completeGame = () => this.completed = true
+
+  // TODO:
+  // add the user data to the serializer to get the name of the user im looking for
+  // when game is over check against the current score
+  // update highscore if its larger I suppose
+  // might be able to refactor the helper in score controller
+  
+  createScoreFromId = () => {
+    api.fetchScore(this.id)
+    .then(scoreData => { 
+      this.timer = scoreData.data.time
+      this.strikes = scoreData.data.strikes
+    })
+  }
 }
