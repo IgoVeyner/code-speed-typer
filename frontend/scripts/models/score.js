@@ -38,7 +38,6 @@ class Score {
       this.username = scoreData.included[0].attributes.name
       this.time = scoreData.data.attributes.time
       this.strikes = scoreData.data.attributes.strikes
-      console.log(this)
     })
   }
 
