@@ -88,7 +88,7 @@ class API {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify({
-        score: {
+        highscore: {
           score_id: score_id,
           code_id: code_id
         } 
