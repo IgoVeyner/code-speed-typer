@@ -1,7 +1,7 @@
 class HighscoresController < ApplicationController
   def create
     highscore = Highscore.create(highscore_params)
-    render json: HighscoreSerializer(highscore)
+    render json: HighscoreSerializer.new(highscore)
   end
 
   private
