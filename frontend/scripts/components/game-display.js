@@ -11,6 +11,7 @@ class GameDisplay {
     user.display.userInput.disableInput()
     user.display.buttons = new ButtonDisplay
     user.score.updateScore()
+    user.score.compareToHighscore()
   }
   
   reset = () => main.innerText = ""

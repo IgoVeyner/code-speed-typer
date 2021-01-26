@@ -41,8 +41,13 @@ class Score {
     api.fetchScore(this.id)
     .then(scoreData => { 
       this.username = scoreData.included[0].attributes.name
-      this.timer = scoreData.data.time
-      this.strikes = scoreData.data.strikes
+      this.time = scoreData.data.attributes.time
+      this.strikes = scoreData.data.attributes.strikes
+      console.log(this)
     })
+  }
+
+  compareToHighscore = () => {
+    const highscore = user.code.highestScore
   }
 }
