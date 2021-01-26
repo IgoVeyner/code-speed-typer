@@ -56,6 +56,18 @@ class ScoreDisplay {
     for (const element of [timer, strikes]) { container.appendChild(element) }
     main.appendChild(container)
 
+    this.timerConverter(time)
+  }
+
+  add_username = (username, div) => {
+    const h3 = document.createElement("h3")
+    h3.innerText = username
+    div.appendChild(h3)
+  }
+
+  createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
+
+  timerConverter = time => {
     if (time.length < 2) {
       this.timer.innerText = `00:0${time}`
     } else if (time.length < 3) {
@@ -68,13 +80,4 @@ class ScoreDisplay {
       this.timer.innerText == "99:99"
     }
   }
-
-  add_username = (username, div) => {
-    const h3 = document.createElement("h3")
-    h3.innerText = username
-    div.appendChild(h3)
-  }
-
-  createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
-
 }
