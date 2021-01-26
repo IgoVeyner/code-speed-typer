@@ -75,7 +75,6 @@ class ScoreDisplay {
     const h3 = document.createElement("h3")
     h3.innerText = username
     div.appendChild(h3)
-    return div
   }
 
 }
