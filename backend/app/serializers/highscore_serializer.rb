@@ -1,5 +1,5 @@
 class HighscoreSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :code_id
-  belongs_to :code
+  attributes :score_id
+  belongs_to :score
 end
