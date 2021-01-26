@@ -49,5 +49,15 @@ class Score {
 
   compareToHighscore = () => {
     const highscore = user.code.highestScore
+    const currentScore = user.score
+
+    if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
+      console.log("faster")
+      // TODO: 
+      // call the api to update the id of highest score
+      // create that api fetch request
+      // create that update action in highscores controller
+      // create a score display and append to the DOM
+    }
   }
 }
