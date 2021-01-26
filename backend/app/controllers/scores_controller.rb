@@ -17,6 +17,7 @@ class ScoresController < ApplicationController
   def update
     if @score
       if @score.update(score_params)
+        check_highscore()
         render json: ScoreSerializer.new(@score)
       else
         render json: {error: @score.errors.full_messages, status: 400}, status: 400
@@ -34,5 +35,16 @@ class ScoresController < ApplicationController
 
   def score_params
     params.require(:score).permit(:user_id, :code_id, :time, :strikes, :completed)
+  end
+
+  def check_highscore
+    code = Code.find_by_id(@score.code_id)
+
+    if code.highscores == []
+      code.highscores << Highscore.create(code_id: code.id, score_id: @score.id)
+    else
+      # check if the current score is better than the current highscore
+      # update appropriately 
+    end
   end
 end
