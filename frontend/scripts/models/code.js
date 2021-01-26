@@ -12,6 +12,9 @@ class Code {
     this.id = codeData.data.id
     this.line = codeData.data.attributes.line
     this.name = codeData.data.attributes.name
+    if (codeData.included.length > 0) {
+      this.highestScoreID = parseInt(codeData.included[0].relationships.score.data.id)
+    }
 
     // Create Score needs to run after the above data is assigned,
     //  otherwise score creation will not have a code_id to send
