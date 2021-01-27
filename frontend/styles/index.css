@@ -51,6 +51,20 @@ main {
   color: #9A9998;
 }
 
+.font-code { 
+  font-family: 'Press Start 2P', cursive; 
+  font-size: 40px;
+}
+
+.font-race { 
+  font-family: 'Faster One', cursive; 
+  font-size: 56px;
+  position: relative;
+  top: -5px;
+  margin-left: 12px;
+  letter-spacing: 14px;
+}
+
 .strike {color: red}
 .correct {color: #008000}
 
