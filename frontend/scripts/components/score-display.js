@@ -70,4 +70,10 @@ class ScoreDisplay {
       this.timer.innerText == "99:99"
     }
   }
+
+  newHighScoreText = () => {
+    const h2 = document.createElement("h2")
+    h2.innerText = "New Highscore!"
+    this.timer.parentElement.prepend(h2)
+  }
 }
