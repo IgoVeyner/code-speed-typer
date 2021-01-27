@@ -15,6 +15,9 @@
   -z-animation: rainbow 30s linear infinite;
   -o-animation: rainbow 30s linear infinite;
   animation: rainbow 30s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @-webkit-keyframes rainbow {
@@ -36,6 +39,14 @@
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
+}
+
+main {
+  position: relative;
+  background-color: #222020;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  margin: 4px;
 }
 
 .strike {color: red}
