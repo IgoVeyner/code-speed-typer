@@ -47,6 +47,8 @@ main {
   width: calc(100% - 8px);
   height: calc(100% - 8px);
   margin: 4px;
+  text-align: center;
+  color: #9A9998;
 }
 
 .strike {color: red}
