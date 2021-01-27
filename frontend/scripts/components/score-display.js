@@ -39,7 +39,7 @@ class ScoreDisplay {
     this.num = num
     container.appendChild(header)
 
-    score.username ? this.add_username(score.username, container) : this.add_username(user.name, container)
+    this.add_username(score.username, container)
 
     strikes.appendChild(num)
     for (const element of [timer, strikes]) { container.appendChild(element) }
