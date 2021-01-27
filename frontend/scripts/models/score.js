@@ -20,7 +20,8 @@ class Score {
         user.display.scoreDiv.newHighScoreText()
         user.code.highestScore = this
         api.postHighscore(user.code.id, user.score.id)
-        .then(() => {
+        .then( highscoreData => {
+          user.code.currentHighscoreID = highscoreData.data.id 
           new ScoreDisplay(user.code.highestScore)
         })
       }
@@ -28,6 +29,7 @@ class Score {
   }
 
   updateData = scoreData => {
+    this.currentHighscoreID = scoreData.data.id
     this.time = scoreData.data.attributes.time
     this.strikes = scoreData.data.attributes.strikes
     this.completed = scoreData.data.attributes.completed
@@ -66,6 +68,7 @@ class Score {
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
       user.display.scoreDiv.newHighScoreText()
       api.updateHighscore(user.code.currentHighscoreID, this.id)
+      user.code.highestScore = this
       new ScoreDisplay(currentScore)
     } else {
       new ScoreDisplay(highscore)
