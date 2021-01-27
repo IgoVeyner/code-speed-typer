@@ -51,6 +51,7 @@ class Score {
     const currentScore = user.score
 
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
+      user.display.scoreDiv.newHighScoreText()
       api.updateHighscore(user.code.currentHighscoreID, this.id)
       new ScoreDisplay(currentScore)
     } else {
