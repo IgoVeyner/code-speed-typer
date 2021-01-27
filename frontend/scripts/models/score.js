@@ -3,6 +3,7 @@ class Score {
     this.time = 0
     this.strikes = 0
     this.completed = false
+    this.username = user.username
     id !== undefined ? this.createScoreFromId(id) : this.createScore()
   }
 
@@ -11,13 +12,18 @@ class Score {
   updateScore = () => {
     [this.time, this.strikes] = this.getCurrentScore()
     api.updateScore(this.id, this.time, this.strikes, this.completed)
-    .then(() => {
+    .then(data => {
+      // TODO update current js score instance's data
+
       if (user.code.highestScore) {
         this.compareToHighscore()
-       } else { 
-         user.display.scoreDiv.newHighScoreText()
-         api.postHighscore(user.code.id, user.score.id)
-       }
+      } else { 
+        user.display.scoreDiv.newHighScoreText()
+        api.postHighscore(user.code.id, user.score.id)
+        .then(() => {
+          new ScoreDisplay(user.code.highestScore)
+        })
+      }
     })
   }
 
