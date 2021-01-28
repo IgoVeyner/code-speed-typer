@@ -137,6 +137,13 @@ main {
   cursor: pointer;
 }
 
+.nameplate-container {
+  position: absolute;
+  top: 0;
+  right: 3vw;
+}
+
+
 .strike {color: red}
 .correct {color: #008000}
 
