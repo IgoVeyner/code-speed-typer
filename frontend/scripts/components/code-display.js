@@ -2,7 +2,7 @@ class CodeDisplay {
   constructor() {
     this.line = user.code.line
     this.headerText = user.code.name
-    this.index = 1
+    this.index = 0
     this.createDisplay()
   }
 
@@ -23,7 +23,7 @@ class CodeDisplay {
     main.appendChild(div)
 
     this.characters = div
-    this.characters.children[1].classList.add("current-input")
+    this.characters.children[0].classList.add("current-input")
   }
 
   checkInput = input => {
@@ -45,8 +45,8 @@ class CodeDisplay {
   }
 
   handleTimer = () => {
-    if (this.index === 1) { user.display.scoreDiv.startTimer() }
-    if (this.index === this.line.length ) { 
+    if (this.index === 0) { user.display.scoreDiv.startTimer() }
+    if (this.index + 1 === this.line.length ) { 
       user.display.scoreDiv.stopTimer()
       user.display.finishGame()
      }
