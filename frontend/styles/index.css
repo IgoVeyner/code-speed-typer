@@ -166,6 +166,11 @@ main {
   margin: 0px;
 }
 
+.strikes {
+  font-size: 1.5em;
+  margin: 0px;
+}
+
 .strike {color: red}
 .correct {color: #008000}
 
