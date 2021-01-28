@@ -18,6 +18,7 @@ class ScoreDisplay {
     this.num = num
 
     container.classList.add("score-container")
+    timer.classList.add("timer")
   }
 
   updateStrikes = () => this.num.innerText = `${parseInt(this.num.innerText, 10) + 1}`

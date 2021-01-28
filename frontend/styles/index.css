@@ -158,7 +158,12 @@ main {
 
 .score-container {
   margin-top: 0vh;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
+}
+
+.timer {
+  font-size: 4.5em;
+  margin: 0px;
 }
 
 .strike {color: red}
