@@ -15,6 +15,7 @@ class LoginForm {
 
     form.classList.add("login-form")
     header.classList.add("form-header")
+    input.classList.add('login-input')
 
     for (const element of [header, input, submit]) { form.appendChild(element) }
     main.appendChild(form)
