@@ -139,10 +139,14 @@ main {
 
 .nameplate-container {
   position: absolute;
-  top: 0;
+  top: 2vh;
   right: 3vw;
 }
 
+.username-text {
+  font-family: 'Press Start 2P';
+  font-size: 15px;
+}
 
 .strike {color: red}
 .correct {color: #008000}

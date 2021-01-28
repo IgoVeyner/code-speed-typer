@@ -10,6 +10,7 @@ class Nameplate {
     username.innerText = user.username
 
     usernameContainer.classList.add("nameplate-container")
+    username.classList.add("username-text")
 
     usernameContainer.appendChild(username)
     main.appendChild(usernameContainer)
