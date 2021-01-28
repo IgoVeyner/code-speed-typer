@@ -10,6 +10,7 @@ class CodeDisplay {
     const div = document.createElement("div")
     const h2 = document.createElement("h2")
 
+    h2.classList.add("code-header")
     h2.innerText = this.headerText
     div.appendChild(h2)
 
