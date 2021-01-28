@@ -114,6 +114,28 @@ main {
 
 .login-input:hover { cursor: text; }
 
+.login-submit {
+  width: 200px;
+  padding: 12px 15px;
+  font-size: 18px;
+  border-radius: 8px;
+  letter-spacing: .8px;
+  margin-top: 5vh;
+  background-color: #36AD47;
+  outline: none;
+  border: 1px solid black;
+  color:white;
+  font-family: monospace;
+  transition: background-color 0.2s ease-in-out;
+  letter-spacing: 0px;
+  font-weight: bolder;
+}
+
+.login-submit:hover { 
+  background-color: #1ac933;
+  cursor: pointer;
+}
+
 .strike {color: red}
 .correct {color: #008000}
 
