@@ -156,6 +156,11 @@ main {
   font-size: 50px;
 }
 
+.score-container {
+  margin-top: 15vh;
+  margin-bottom: 10vh;
+}
+
 .strike {color: red}
 .correct {color: #008000}
 
