@@ -157,6 +157,12 @@ main {
   font-family: 'Press Start 2P';;
 }
 
+.new-highscore { 
+  margin: 0px;
+  color: limegreen; 
+  letter-spacing: 1.5px;
+}
+
 .score-container {
   margin-top: 0vh;
   margin-bottom: 7vh;
