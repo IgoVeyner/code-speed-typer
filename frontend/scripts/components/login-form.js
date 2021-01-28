@@ -18,6 +18,7 @@ class LoginForm {
 
     for (const element of [header, input, submit]) { form.appendChild(element) }
     main.appendChild(form)
+    input.focus()
   }
 
   postToUsers = e => {
