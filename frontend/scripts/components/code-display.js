@@ -12,7 +12,7 @@ class CodeDisplay {
 
     h2.classList.add("code-header")
     h2.innerText = this.headerText
-    div.appendChild(h2)
+    main.prepend(h2)
 
     for (const char of this.line){
       const span = document.createElement("span")

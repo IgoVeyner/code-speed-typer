@@ -150,15 +150,15 @@ main {
 }
 
 .code-header {
-  position: absolute;
-  top: -1px;
   width: 100%;
   font-size: 50px;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
 }
 
 .score-container {
-  margin-top: 15vh;
-  margin-bottom: 10vh;
+  margin-top: 0vh;
+  margin-bottom: 5vh;
 }
 
 .strike {color: red}
