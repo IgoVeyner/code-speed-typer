@@ -1,5 +1,9 @@
 * {cursor: default}
 
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: 'Bebas Neue', cursive;
+}
+
 #wrapper-rainbow {
   position: absolute;
   left:0;
@@ -84,9 +88,10 @@ main {
 }
 
 .form-header {
-  margin-top: 15vh;
+  margin-top: 10vh;
   margin-bottom: 5vh;
   width: 100%;
+  letter-spacing: 1.5px;
 }
 
 .strike {color: red}
