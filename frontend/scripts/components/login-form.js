@@ -12,6 +12,7 @@ class LoginForm {
     submit.value = "Continue"
 
     form.addEventListener("submit", this.postToUsers)
+    form.classList.add("login-form")
 
     for (const element of [header, input, submit]) { form.appendChild(element) }
     main.appendChild(form)
