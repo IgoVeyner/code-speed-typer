@@ -54,6 +54,11 @@ main {
   color: #9A9998;
 }
 
+.main-header {
+  margin: 0px;
+  padding: 0px;
+}
+
 .font-code { 
   font-family: 'Press Start 2P', cursive; 
   font-size: 40px;
