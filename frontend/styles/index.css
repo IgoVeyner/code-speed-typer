@@ -41,6 +41,9 @@
     100%{background-position:0% 82%}
 }
 
+input:focus,
+button:focus { outline: none; }
+
 main {
   position: relative;
   background-color: #222020;
