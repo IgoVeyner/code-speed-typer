@@ -104,6 +104,8 @@ main {
   letter-spacing: .8px;
 }
 
+.login-input:hover { cursor: text; }
+
 .strike {color: red}
 .correct {color: #008000}
 
