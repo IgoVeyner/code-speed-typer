@@ -24,7 +24,17 @@ class CodeDisplay {
     main.appendChild(div)
 
     this.characters = div
-    this.characters.children[0].classList.add("current-input")
+    this.textBlinker = setInterval(this.changeColor, 400)
+  }
+
+  changeColor = () => {
+    const currentChar = this.characters.children[this.index]
+    
+    if (currentChar.classList.contains("current-input")) {
+      currentChar.classList.remove("current-input")
+    } else {
+      currentChar.classList.add("current-input")
+    }
   }
 
   checkInput = input => {

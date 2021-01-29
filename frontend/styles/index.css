@@ -197,6 +197,11 @@ main {
   right: 0px;
 }
 
+.current-input { 
+  background-color: grey;
+  color: black;
+ }
+
 .button {
   width: 80px;
   height: 80px;
