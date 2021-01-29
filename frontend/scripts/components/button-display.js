@@ -33,6 +33,21 @@ class ButtonDisplay {
 
   createButtonsTemp = () => {
     const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers
+
+    let i = 0
+    for(const container of [btn1Container, btn2Container]) {
+      const elements = this.createElements("h3", "p", "button")
+
+      if (i === 0) {
+        this.updateElements(elements, ["Try Again", "(backspace)", "url(./assets/backspace.png)"])
+      } else {
+        this.updateElements(elements, ["Random", "(enter)", "url(./assets/enter.png)"])
+      }
+      // append elements to containers
+      // append containers to large container
+
+      i += 1
+    }
   }
 
   createButtonContainers = () => {
@@ -40,6 +55,10 @@ class ButtonDisplay {
   }
 
   createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
+
+  updateElements = (elements, [...args]) => {
+    // update elements
+  }
 
   keydownHandler = e => {
     if (e.keyCode === 13 || e.keyCode === 8) { this.removeKeydownHandler()}
