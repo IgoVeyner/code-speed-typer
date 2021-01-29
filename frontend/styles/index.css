@@ -208,6 +208,11 @@ main {
   justify-content: center;
 }
 
+.button-header {
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
 .button {
   width: 80px;
   height: 80px;

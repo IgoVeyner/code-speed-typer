@@ -39,6 +39,8 @@ class ButtonDisplay {
     elements[0].innerText = args[0]
     elements[1].style.background = args[1]
     elements[2].innerText = args[2]
+
+    elements[0].classList.add("button-header")
     elements[1].classList.add("button")
   }
 
