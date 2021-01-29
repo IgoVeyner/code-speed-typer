@@ -31,6 +31,12 @@ class ButtonDisplay {
     window.addEventListener("keydown", this.keydownHandler)
   }
 
+  createButtonContainers = () => {
+    return this.createElements(["div", "div", "div"])
+  }
+
+  createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
+
   keydownHandler = e => {
     if (e.keyCode === 13 || e.keyCode === 8) { this.removeKeydownHandler()}
     if (e.keyCode === 8) { user.resetGame() }
