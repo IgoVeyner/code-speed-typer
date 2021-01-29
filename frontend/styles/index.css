@@ -181,7 +181,8 @@ main {
 .code-char {
   font-family: 'Istok Web', sans-serif;
   font-size: 4vh;
-    letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-shadow: none;
 }
 
 .strike {color: red}
@@ -195,8 +196,6 @@ main {
   top: 0px;
   right: 0px;
 }
-
-.current-input { border-bottom: 3px solid black }
 
 .button {
   width: 80px;
