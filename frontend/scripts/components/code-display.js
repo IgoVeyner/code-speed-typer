@@ -28,31 +28,33 @@ class CodeDisplay {
   }
 
   changeColor = () => {
-    const currentChar = this.characters.children[this.index]
+    const char = this.characters.children[this.index]
     
-    if (currentChar.classList.contains("current-input")) {
-      currentChar.classList.remove("current-input")
+    if (char.classList.contains("current-input")) {
+      char.classList.remove("current-input")
     } else {
-      currentChar.classList.add("current-input")
+      char.classList.add("current-input")
     }
   }
 
   checkInput = input => {
     if (input === this.characters.children[this.index].innerText) {
-      this.moveUnderline()
       this.handleTimer()
+      this.removeBlinkingText()
       this.index += 1
+      if (this.index < this.characters.children.length) { this.addBlinkingText() }
       return true
     } else {
       return false
     }
   }
 
-  moveUnderline = () => {
-    this.characters.children[this.index].classList.remove("current-input")
-    if (this.index < this.characters.children.length - 1) {
-      this.characters.children[this.index + 1].classList.add("current-input")
-    }
+  addBlinkingText = () => this.textBlinker = setInterval(this.changeColor, 400)
+
+  removeBlinkingText = () => {
+    clearInterval(this.textBlinker)
+    const char = this.characters.children[this.index]
+    char.classList.remove("current-input")
   }
 
   handleTimer = () => {
