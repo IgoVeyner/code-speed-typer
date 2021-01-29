@@ -70,9 +70,7 @@ main {
   border-radius: 10px;
 }
 
-.main-header {
-  margin: 4%;
-}
+.main-header { margin: 4%; }
 
 .font-code { 
   font-family: 'Press Start 2P', cursive; 
@@ -102,6 +100,7 @@ main {
   margin-bottom: 5vh;
   width: 100%;
   letter-spacing: 1.5px;
+  color: white;
 }
 
 .login-input {
@@ -147,6 +146,7 @@ main {
 .username-text {
   font-family: 'Press Start 2P';
   font-size: 15px;
+  color: white;
 }
 
 .code-header {
