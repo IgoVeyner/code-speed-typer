@@ -12,10 +12,10 @@ class ButtonDisplay {
 
       if (i === 0) {
         this.updateElements(elements, ["Try Again", "url(./assets/backspace.png)", "(backspace)"])
-        elements[2].addEventListener("click", () => { this.removeKeydownHandler(); user.resetGame() })
+        elements[1].addEventListener("click", () => { this.removeKeydownHandler(); user.resetGame() })
       } else {
         this.updateElements(elements, ["Random", "url(./assets/enter.png)", "(enter)"])
-        elements[2].addEventListener("click", () => { this.removeKeydownHandler(); user.newRandomGame() })
+        elements[1].addEventListener("click", () => { this.removeKeydownHandler(); user.newRandomGame() })
       }
       
       for (const element of elements) { container.appendChild(element) }
