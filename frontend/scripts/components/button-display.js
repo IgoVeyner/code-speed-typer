@@ -8,13 +8,13 @@ class ButtonDisplay {
 
     let i = 0
     for(const container of [btn1Container, btn2Container]) {
-      const elements = this.createElements(["h3", "p", "button"])
+      const elements = this.createElements(["h3", "button", "p"])
 
       if (i === 0) {
-        this.updateElements(elements, ["Try Again", "(backspace)", "url(./assets/backspace.png)"])
+        this.updateElements(elements, ["Try Again", "url(./assets/backspace.png)", "(backspace)"])
         elements[2].addEventListener("click", () => { this.removeKeydownHandler(); user.resetGame() })
       } else {
-        this.updateElements(elements, ["Random", "(enter)", "url(./assets/enter.png)"])
+        this.updateElements(elements, ["Random", "url(./assets/enter.png)", "(enter)"])
         elements[2].addEventListener("click", () => { this.removeKeydownHandler(); user.newRandomGame() })
       }
       
@@ -36,9 +36,9 @@ class ButtonDisplay {
 
   updateElements = (elements, [...args]) => {
     elements[0].innerText = args[0]
-    elements[1].innerText = args[1]
-    elements[2].style.background = args[2]
-    elements[2].classList.add("button")
+    elements[1].style.background = args[1]
+    elements[2].innerText = args[2]
+    elements[1].classList.add("button")
   }
 
   keydownHandler = e => {
