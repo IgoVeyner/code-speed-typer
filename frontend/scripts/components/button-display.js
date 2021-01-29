@@ -43,11 +43,15 @@ class ButtonDisplay {
       } else {
         this.updateElements(elements, ["Random", "(enter)", "url(./assets/enter.png)"])
       }
-      // append elements to containers
-      // append containers to large container
+      
+      for (const element of elements) { container.appendChild(element) }
+      buttonsContainer.appendChild(container)
 
       i += 1
     }
+
+    main.appendChild(buttonsContainer)
+    window.addEventListener("keydown", this.keydownHandler)
   }
 
   createButtonContainers = () => {
