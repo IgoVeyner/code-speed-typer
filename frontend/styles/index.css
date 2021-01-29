@@ -178,6 +178,12 @@ main {
   margin: 0px;
 }
 
+.code-char {
+  font-family: 'Istok Web', sans-serif;
+  font-size: 4vh;
+    letter-spacing: 1px;
+}
+
 .strike {color: red}
 .correct {color: #008000}
 

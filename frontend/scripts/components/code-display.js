@@ -17,6 +17,7 @@ class CodeDisplay {
     for (const char of this.line){
       const span = document.createElement("span")
       span.innerText = char
+      span.classList.add("code-char")
       div.appendChild(span)
     }
 
