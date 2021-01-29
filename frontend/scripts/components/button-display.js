@@ -1,6 +1,6 @@
 class ButtonDisplay {
   constructor() {
-    this.createButtons()
+    this.createButtonsTemp()
   }
 
   createButtons = () => {
@@ -32,16 +32,18 @@ class ButtonDisplay {
   }
 
   createButtonsTemp = () => {
-    const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers
+    const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers()
 
     let i = 0
     for(const container of [btn1Container, btn2Container]) {
-      const elements = this.createElements("h3", "p", "button")
+      const elements = this.createElements(["h3", "p", "button"])
 
       if (i === 0) {
         this.updateElements(elements, ["Try Again", "(backspace)", "url(./assets/backspace.png)"])
+        elements[2].addEventListener("click", () => { this.removeKeydownHandler(); user.resetGame() })
       } else {
         this.updateElements(elements, ["Random", "(enter)", "url(./assets/enter.png)"])
+        elements[2].addEventListener("click", () => { this.removeKeydownHandler(); user.newRandomGame() })
       }
       
       for (const element of elements) { container.appendChild(element) }
@@ -58,12 +60,13 @@ class ButtonDisplay {
     return this.createElements(["div", "div", "div"])
   }
 
-  createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
+  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   updateElements = (elements, [...args]) => {
     elements[0].innerText = args[0]
     elements[1].innerText = args[1]
-    elements[2].src = args[2]
+    elements[2].style.background = args[2]
+    elements[2].classList.add("button")
   }
 
   keydownHandler = e => {
