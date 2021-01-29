@@ -212,6 +212,7 @@ main {
 .button-header {
   margin-top: 0px;
   margin-bottom: 2px;
+  text-shadow: none;
 }
 
 .button-description {

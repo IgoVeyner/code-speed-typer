@@ -49,7 +49,12 @@ class CodeDisplay {
     }
   }
 
-  addBlinkingText = () => this.textBlinker = setInterval(this.changeColor, 400)
+  addBlinkingText = () => {
+    const char = this.characters.children[this.index]
+    char.classList.add("current-input")
+    
+    this.textBlinker = setInterval(this.changeColor, 400)
+  }
 
   removeBlinkingText = () => {
     clearInterval(this.textBlinker)
