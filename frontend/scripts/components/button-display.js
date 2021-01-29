@@ -57,7 +57,9 @@ class ButtonDisplay {
   createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
 
   updateElements = (elements, [...args]) => {
-    // update elements
+    elements[0].innerText = args[0]
+    elements[1].innerText = args[1]
+    elements[2].src = args[2]
   }
 
   keydownHandler = e => {
