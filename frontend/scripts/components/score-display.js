@@ -47,9 +47,14 @@ class ScoreDisplay {
 
     strikes.appendChild(num)
     for (const element of [timer, strikes]) { container.appendChild(element) }
-    main.appendChild(container)
+    user.display.codeDisplay.characters.appendChild(container)
 
     this.timerConverter(time)
+  }
+
+  createFromScoreTemp = score => {
+    const [container, header, text] = this.createElements(["div", "h1", "h2"])
+    
   }
 
   add_username = (username, div) => {
