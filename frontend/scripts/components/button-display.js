@@ -23,7 +23,8 @@ class ButtonDisplay {
 
       i += 1
     }
-
+    
+    buttonsContainer.classList.add("button-wrapper")
     main.appendChild(buttonsContainer)
     window.addEventListener("keydown", this.keydownHandler)
   }

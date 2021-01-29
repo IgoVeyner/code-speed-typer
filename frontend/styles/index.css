@@ -202,10 +202,17 @@ main {
   color: black;
  }
 
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .button {
   width: 80px;
   height: 80px;
   border: none;
+  margin: 0px 3vw;
 }
 
 .button:hover {cursor: pointer}
