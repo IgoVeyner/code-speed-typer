@@ -233,3 +233,10 @@ main {
   display: inline-block;
   margin: 0px 24px;
 }
+
+.highscore-container { margin: 6vh 0px }
+
+.highscore-header, .highscore-text {
+  color: white;
+  margin: 0px;
+}
