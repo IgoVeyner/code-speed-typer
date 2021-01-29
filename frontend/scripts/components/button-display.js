@@ -31,6 +31,10 @@ class ButtonDisplay {
     window.addEventListener("keydown", this.keydownHandler)
   }
 
+  createButtonsTemp = () => {
+    const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers
+  }
+
   createButtonContainers = () => {
     return this.createElements(["div", "div", "div"])
   }
