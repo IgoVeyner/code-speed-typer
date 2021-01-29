@@ -42,6 +42,7 @@ class ButtonDisplay {
 
     elements[0].classList.add("button-header")
     elements[1].classList.add("button")
+    elements[2].classList.add("button-description")
   }
 
   keydownHandler = e => {
