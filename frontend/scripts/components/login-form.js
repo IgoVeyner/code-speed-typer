@@ -4,8 +4,7 @@ class LoginForm {
   } 
 
   createForm = () => {
-    const elementsToCreate = ["form", "h1", "input", "input"]
-    const [form, header, input, submit] = elementsToCreate.map(element => document.createElement(element))
+    const [form, header, input, submit] = this.createElements(["form", "h1", "input", "input"])
 
     header.innerText = "Enter a Username"
     submit.type = "submit"
@@ -23,6 +22,8 @@ class LoginForm {
     input.focus()
   }
 
+  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
+
   postToUsers = e => {
     e.preventDefault()
     const username = document.querySelector("input").value
@@ -31,5 +32,4 @@ class LoginForm {
   }
 
   deleteForm = () => main.innerHTML = ""
-
 }
