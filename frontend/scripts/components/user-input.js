@@ -18,7 +18,8 @@ class UserInput {
     const currentIndex = user.display.codeDisplay.index
     
     if (currentIndex > 0) {
-      user.display.codeDisplay.updateColor(inputTruthy)
+      const codeDisplay = user.display.codeDisplay
+      codeDisplay.updateColor(inputTruthy)
       
       if (inputTruthy === false) { 
         const scoreDisplay = user.display.scoreDiv
