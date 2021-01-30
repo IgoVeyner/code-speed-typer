@@ -50,6 +50,7 @@ class CodeDisplay {
   }
 
   getClassList = () => this.characters[this.index].classList
+  getPrevClassList = () => this.characters[this.index - 1].classList
 
   addBlinkingText = () => {
     const styles = this.getClassList()
@@ -75,9 +76,8 @@ class CodeDisplay {
   }
 
   updateColor = truthy => {
-    const styles = this.getClassList()
+    const styles = this.getPrevClassList()
     if (truthy) {
-      console.log(styles)
       styles.remove("strike")
       styles.add("correct")
     } else {
