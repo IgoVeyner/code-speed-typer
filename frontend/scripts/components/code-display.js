@@ -37,18 +37,7 @@ class CodeDisplay {
     styles.contains(style) ? styles.remove(style) : styles.add(style)
   }
 
-  checkInput = input => {
-    if (input === this.characters[this.index].innerText) {
-      this.handleTimer()
-      this.removeBlinkingText()
-      this.index += 1
-      if (this.index < this.characters.length) { this.addBlinkingText() }
-      return true
-    } else {
-      return false
-    }
-  }
-
+  checkInput = input => input === this.characters[this.index].innerText ? true : false
   getClassList = () => this.characters[this.index].classList
   getPrevClassList = () => this.characters[this.index - 1].classList
 
@@ -75,8 +64,8 @@ class CodeDisplay {
     }
   }
 
-  updateColor = truthy => {
+  updateColor = () => {
     const styles = this.getPrevClassList()
-    if (truthy) { styles.add("correct") }
+    styles.add("correct")
   }
 }
