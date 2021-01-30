@@ -6,6 +6,14 @@ class Score {
     id !== undefined ? this.createScoreFromId(id) : this.createScore()
   }
 
+  static createBlank = () => {
+    const score = new Score 
+    score.time = 0
+    score.strikes = 0
+    score.completed = false
+    return score 
+  }
+
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
   
   updateScore = () => {
