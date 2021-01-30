@@ -5,15 +5,15 @@ class User {
 
   postUser = username => {
     api.postUser(username)
-    .then(data => {
-      this.updateInfo(data)
+    .then(userData => {
+      this.updateInfo(userData.data)
       this.createCode()
     })
   }
 
-  updateInfo = obj => {
-    this.id = obj.data.id
-    this.username = obj.data.attributes.name
+  updateInfo = data => {
+    this.id = data.id
+    this.username = data.attributes.name
   }
 
   createCode = () => this.code = new Code()
