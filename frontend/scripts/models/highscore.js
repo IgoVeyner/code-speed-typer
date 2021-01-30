@@ -6,7 +6,7 @@ class Highscore {
     const highscore = new Highscore
     highscore.id = data.id
     highscore.scoreID = data.relationships.score.data.id
-    highscore.score = new Score(highscore.scoreID)
+    highscore.score = Score.createFromId(highscore.scoreID)
     return highscore
   }
 

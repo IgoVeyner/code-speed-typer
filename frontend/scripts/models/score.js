@@ -7,6 +7,7 @@ class Score {
     score.time = 0
     score.strikes = 0
     score.completed = false
+    score.createScore()
     return score 
   }
 
