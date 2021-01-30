@@ -31,10 +31,10 @@ class CodeDisplay {
   createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   changeColor = () => {
-    const classList = this.characters[this.index].classList
+    const styles = this.getClassList()
     const style = "current-input"
     
-    classList.contains(style) ? classList.remove(style) : classList.add(style)
+    styles.contains(style) ? styles.remove(style) : styles.add(style)
   }
 
   checkInput = input => {
@@ -49,17 +49,18 @@ class CodeDisplay {
     }
   }
 
+  getClassList = () => this.characters[this.index].classList
+
   addBlinkingText = () => {
-    const char = this.characters[this.index]
-    char.classList.add("current-input")
-    
+    const styles = this.getClassList()
+    styles.add("current-input")
     this.textBlinker = setInterval(this.changeColor, 400)
   }
 
   removeBlinkingText = () => {
+    const styles = this.getClassList()
     clearInterval(this.textBlinker)
-    const char = this.characters[this.index]
-    char.classList.remove("current-input")
+    styles.remove("current-input")
   }
 
   handleTimer = () => {
@@ -74,12 +75,13 @@ class CodeDisplay {
   }
 
   updateColor = truthy => {
+    const styles = this.getClassList()
     if (truthy) {
-      const current = this.characters[this.index - 1]
-      current.classList.remove("strike")
-      current.classList.add("correct")
+      console.log(styles)
+      styles.remove("strike")
+      styles.add("correct")
     } else {
-      this.characters[this.index].classList.add("strike")
+      styles.add("strike")
     }
   }
 }
