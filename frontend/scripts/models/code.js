@@ -13,9 +13,10 @@ class Code {
     this.line = codeData.data.attributes.line
     this.name = codeData.data.attributes.name
     if (codeData.included.length > 0) {
-      this.currentHighscoreID = parseInt(codeData.included[0].id)
-      this.highestScoreID = parseInt(codeData.included[0].relationships.score.data.id)
-      this.highestScore = new Score(this.highestScoreID)
+      this.highscore = new Highscore(codeData.included[0])
+      // this.currentHighscoreID = parseInt(codeData.included[0].id)
+      // this.highestScoreID = parseInt(codeData.included[0].relationships.score.data.id)
+      // this.highestScore = new Score(this.highestScoreID)
     }
 
     // Create Score needs to run after the above data is assigned,
