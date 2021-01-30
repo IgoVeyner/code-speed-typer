@@ -20,9 +20,11 @@ class CodeDisplay {
       div.appendChild(span)
     }
 
-    main.appendChild(div)
+    codeContainer.appendChild(div)
+    main.appendChild(codeContainer)
 
     this.characters = div.children
+    this.container = codeContainer
     this.textBlinker = setInterval(this.changeColor, 400)
   }
 

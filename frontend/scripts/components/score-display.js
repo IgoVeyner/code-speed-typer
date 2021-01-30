@@ -45,7 +45,7 @@ class ScoreDisplay {
     container.classList.add("highscore-container")
 
     for (const element of [header, text]) { container.appendChild(element) }
-    user.display.codeDisplay.characters.appendChild(container)
+    user.display.codeDisplay.container.appendChild(container)
   }
 
   add_username = (username, div) => {
