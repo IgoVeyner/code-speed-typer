@@ -14,7 +14,7 @@ class CodeDisplay {
     h2.innerText = this.headerText
     main.prepend(h2)
 
-    for (const char of this.line){
+    for (const char of this.line) {
       const span = document.createElement("span")
       span.innerText = char
       span.classList.add("code-char")
@@ -23,12 +23,12 @@ class CodeDisplay {
 
     main.appendChild(div)
 
-    this.characters = div
+    this.characters = div.children
     this.textBlinker = setInterval(this.changeColor, 400)
   }
 
   changeColor = () => {
-    const char = this.characters.children[this.index]
+    const char = this.characters[this.index]
     
     if (char.classList.contains("current-input")) {
       char.classList.remove("current-input")
@@ -38,11 +38,11 @@ class CodeDisplay {
   }
 
   checkInput = input => {
-    if (input === this.characters.children[this.index].innerText) {
+    if (input === this.characters[this.index].innerText) {
       this.handleTimer()
       this.removeBlinkingText()
       this.index += 1
-      if (this.index < this.characters.children.length) { this.addBlinkingText() }
+      if (this.index < this.characters.length) { this.addBlinkingText() }
       return true
     } else {
       return false
@@ -50,7 +50,7 @@ class CodeDisplay {
   }
 
   addBlinkingText = () => {
-    const char = this.characters.children[this.index]
+    const char = this.characters[this.index]
     char.classList.add("current-input")
     
     this.textBlinker = setInterval(this.changeColor, 400)
@@ -58,7 +58,7 @@ class CodeDisplay {
 
   removeBlinkingText = () => {
     clearInterval(this.textBlinker)
-    const char = this.characters.children[this.index]
+    const char = this.characters[this.index]
     char.classList.remove("current-input")
   }
 
@@ -72,11 +72,11 @@ class CodeDisplay {
 
   updateColor = truthy => {
     if (truthy) {
-      const current = this.characters.children[this.index - 1]
+      const current = this.characters[this.index - 1]
       current.classList.remove("strike")
       current.classList.add("correct")
     } else {
-      this.characters.children[this.index].classList.add("strike")
+      this.characters[this.index].classList.add("strike")
     }
   }
 }
