@@ -9,7 +9,7 @@ class Score {
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
   
   updateScore = () => {
-    this.getCurrentScore()
+    this.updateCurrentScore()
 
     api.updateScore(this.id, this.time, this.strikes, this.completed)
     .then(() => {
@@ -27,7 +27,7 @@ class Score {
     })
   }
 
-  getCurrentScore = () => {
+  updateCurrentScore = () => {
     const timer = user.display.scoreDiv.timer.innerText
     const strikes = user.display.scoreDiv.num.innerText
     
