@@ -1,7 +1,6 @@
 class ScoreDisplay {
   constructor(score) {
-    // score ? this.createFromScore(score) : this.createDisplay()
-    score ? this.createFromScoreTemp(score) : this.createDisplay()
+    score ? this.createFromScore(score) : this.createDisplay()
   }
 
   createDisplay = () => {
@@ -33,27 +32,6 @@ class ScoreDisplay {
   }
 
   createFromScore = score => {
-    const [container, header, timer, strikes, num] = this.createElements(["div", "h1", "h1", "h2", "span"])
-
-    let time = `${score.time / 10}`
-    strikes.innerText = "Strikes: "
-    num.innerText = `${score.strikes}`
-    header.innerText = "Highscore"
-
-    this.timer = timer
-    this.num = num
-    container.appendChild(header)
-
-    this.add_username(score.username, container)
-
-    strikes.appendChild(num)
-    for (const element of [timer, strikes]) { container.appendChild(element) }
-    user.display.codeDisplay.characters.appendChild(container)
-
-    this.timerConverter(time)
-  }
-
-  createFromScoreTemp = score => {
     const [container, header, text, timer] = this.createElements(["div", "h1", "h2", "span"])
     let time = `${score.time / 10}`
     this.timer = timer
