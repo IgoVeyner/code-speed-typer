@@ -4,7 +4,7 @@ class ButtonDisplay {
   }
 
   createButtons = () => {
-    const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers()
+    const [buttonsContainer, btn1Container, btn2Container] = user.display.createElements(["div", "div", "div"])
     const tryAgainArgs =  ["Try Again", "url(./assets/backspace.png)", "(backspace)", user.resetGame]
     const newRandomArgs =  ["Random", "url(./assets/enter.png)", "(enter)", user.newRandomGame]
 
@@ -22,8 +22,6 @@ class ButtonDisplay {
     main.appendChild(buttonsContainer)
     window.addEventListener("keydown", this.keydownHandler)
   }
-
-  createButtonContainers = () => user.display.createElements(["div", "div", "div"])
 
   updateElements = (elements, [...args]) => {
     elements[0].innerText = args[0]
