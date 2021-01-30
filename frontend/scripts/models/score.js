@@ -30,6 +30,7 @@ class Score {
   // Helpers
 
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
+  assignID = scoreData => this.id = scoreData.id 
   
   updateScore = () => {
     this.updateCurrentScore()
@@ -59,8 +60,6 @@ class Score {
     this.time = parseInt(timer.replace(":", ""), 10) * 10
     this.strikes = parseInt(strikes)    
   }
-
-  assignID = scoreData => this.id = scoreData.id 
 
   compareToHighscore = () => {
     const highscore = user.code.highscore.score
