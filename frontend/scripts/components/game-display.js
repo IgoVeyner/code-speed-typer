@@ -7,7 +7,6 @@ class GameDisplay {
   }
 
   finishGame = () => {
-    user.score.completeGame()
     user.display.userInput.disableInput()
     user.display.buttons = new ButtonDisplay
     user.score.updateScore()

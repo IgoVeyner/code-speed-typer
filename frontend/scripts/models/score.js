@@ -9,7 +9,9 @@ class Score {
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
   
   updateScore = () => {
+    this.completed = true
     [this.time, this.strikes] = this.getCurrentScore()
+
     api.updateScore(this.id, this.time, this.strikes, this.completed)
     .then(data => {
       this.updateData(data)
@@ -47,8 +49,6 @@ class Score {
   }
 
   assignID = scoreData => this.id = scoreData.id 
-
-  completeGame = () => this.completed = true
   
   createScoreFromId = id => {
     this.id = id
