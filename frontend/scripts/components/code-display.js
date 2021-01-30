@@ -31,13 +31,10 @@ class CodeDisplay {
   createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   changeColor = () => {
-    const char = this.characters[this.index]
+    const classList = this.characters[this.index].classList
+    const style = "current-input"
     
-    if (char.classList.contains("current-input")) {
-      char.classList.remove("current-input")
-    } else {
-      char.classList.add("current-input")
-    }
+    classList.contains(style) ? classList.remove(style) : classList.add(style)
   }
 
   checkInput = input => {
