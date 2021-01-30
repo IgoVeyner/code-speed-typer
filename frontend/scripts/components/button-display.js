@@ -5,22 +5,23 @@ class ButtonDisplay {
 
   createButtons = () => {
     const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers()
+    const tryAgainArgs =  ["Try Again", "url(./assets/backspace.png)", "(backspace)"]
+    const newRandomArgs =  ["Random", "url(./assets/enter.png)", "(enter)"]
 
     let i = 0
     for(const container of [btn1Container, btn2Container]) {
       const elements = this.createElements(["h3", "button", "p"])
 
       if (i === 0) {
-        this.updateElements(elements, ["Try Again", "url(./assets/backspace.png)", "(backspace)"])
+        this.updateElements(elements, tryAgainArgs)
         elements[1].addEventListener("click", () => { this.removeKeydownHandler(); user.resetGame() })
       } else {
-        this.updateElements(elements, ["Random", "url(./assets/enter.png)", "(enter)"])
+        this.updateElements(elements, newRandomArgs)
         elements[1].addEventListener("click", () => { this.removeKeydownHandler(); user.newRandomGame() })
       }
       
       for (const element of elements) { container.appendChild(element) }
       buttonsContainer.appendChild(container)
-
       i += 1
     }
     
@@ -29,10 +30,7 @@ class ButtonDisplay {
     window.addEventListener("keydown", this.keydownHandler)
   }
 
-  createButtonContainers = () => {
-    return this.createElements(["div", "div", "div"])
-  }
-
+  createButtonContainers = () => this.createElements(["div", "div", "div"])
   createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   updateElements = (elements, [...args]) => {
@@ -51,5 +49,5 @@ class ButtonDisplay {
     if (e.keyCode === 13) { user.newRandomGame() }
   }
 
-  removeKeydownHandler = () => { window.removeEventListener("keydown", this.keydownHandler) }
+  removeKeydownHandler = () => window.removeEventListener("keydown", this.keydownHandler)
 }
