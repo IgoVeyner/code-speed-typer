@@ -2,6 +2,8 @@ class Score {
   constructor() {
   }
 
+  // Custom Constructors
+
   static createBlank = () => {
     const score = new Score 
     score.time = 0
@@ -24,6 +26,8 @@ class Score {
 
     return score
   }
+
+  // Helpers
 
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
   

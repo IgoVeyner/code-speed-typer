@@ -2,6 +2,8 @@ class Highscore {
   constructor() {
   }
 
+  // Custom Constructors
+
   static createFromData = data => {
     const highscore = new Highscore
     highscore.id = data.id
