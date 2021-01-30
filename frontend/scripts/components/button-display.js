@@ -11,7 +11,7 @@ class ButtonDisplay {
     let i = 0
     for(const container of [btn1Container, btn2Container]) {
 
-      const elements = this.createElements(["h3", "button", "p"])
+      const elements = user.display.createElements(["h3", "button", "p"])
       i === 0 ? this.updateElements(elements, tryAgainArgs) : this.updateElements(elements, newRandomArgs)
       for (const element of elements) { container.appendChild(element) }
       buttonsContainer.appendChild(container)
@@ -23,8 +23,7 @@ class ButtonDisplay {
     window.addEventListener("keydown", this.keydownHandler)
   }
 
-  createButtonContainers = () => this.createElements(["div", "div", "div"])
-  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
+  createButtonContainers = () => user.display.createElements(["div", "div", "div"])
 
   updateElements = (elements, [...args]) => {
     elements[0].innerText = args[0]
