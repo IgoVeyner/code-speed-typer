@@ -51,13 +51,13 @@ class Score {
   }
 
   compareToHighscore = () => {
-    const highscore = user.code.highestScore
+    const highscore = user.code.highscore.score
     const currentScore = user.score
 
     if (currentScore.time < highscore.time || (currentScore.time == highscore.time && currentScore.strikes < highscore.strikes)) {
       user.display.scoreDiv.newHighScoreText()
-      api.updateHighscore(user.code.currentHighscoreID, this.id)
-      user.code.highestScore = this
+      api.updateHighscore(user.code.highscore.id, this.id)
+      user.code.highscore.score = this
       new ScoreDisplay(currentScore)
     } else {
       new ScoreDisplay(highscore)
