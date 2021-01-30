@@ -57,17 +57,6 @@ class Score {
   }
 
   assignID = scoreData => this.id = scoreData.id 
-  
-  createScoreFromId = id => {
-    this.id = id
-
-    api.fetchScore(id)
-    .then(scoreData => { 
-      this.username = scoreData.included[0].attributes.name
-      this.time = scoreData.data.attributes.time
-      this.strikes = scoreData.data.attributes.strikes
-    })
-  }
 
   compareToHighscore = () => {
     const highscore = user.code.highscore.score
