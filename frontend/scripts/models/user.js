@@ -17,7 +17,7 @@ class User {
   }
 
   createCode = () => this.code = new Code()
-  createScore = () => this.score = new Score()
+  createScore = () => this.score = Score.createBlank()
   createGameDisplay = () => this.display = new GameDisplay()
 
   resetGame = () => {
