@@ -5,21 +5,14 @@ class ButtonDisplay {
 
   createButtons = () => {
     const [buttonsContainer, btn1Container, btn2Container] = this.createButtonContainers()
-    const tryAgainArgs =  ["Try Again", "url(./assets/backspace.png)", "(backspace)"]
-    const newRandomArgs =  ["Random", "url(./assets/enter.png)", "(enter)"]
+    const tryAgainArgs =  ["Try Again", "url(./assets/backspace.png)", "(backspace)", user.resetGame]
+    const newRandomArgs =  ["Random", "url(./assets/enter.png)", "(enter)", user.newRandomGame]
 
     let i = 0
     for(const container of [btn1Container, btn2Container]) {
-      const elements = this.createElements(["h3", "button", "p"])
 
-      if (i === 0) {
-        this.updateElements(elements, tryAgainArgs)
-        elements[1].addEventListener("click", () => { this.removeKeydownHandler(); user.resetGame() })
-      } else {
-        this.updateElements(elements, newRandomArgs)
-        elements[1].addEventListener("click", () => { this.removeKeydownHandler(); user.newRandomGame() })
-      }
-      
+      const elements = this.createElements(["h3", "button", "p"])
+      i === 0 ? this.updateElements(elements, tryAgainArgs) : this.updateElements(elements, newRandomArgs)
       for (const element of elements) { container.appendChild(element) }
       buttonsContainer.appendChild(container)
       i += 1
@@ -41,6 +34,9 @@ class ButtonDisplay {
     elements[0].classList.add("button-header")
     elements[1].classList.add("button")
     elements[2].classList.add("button-description")
+
+    // Function as first class data
+    elements[1].addEventListener("click", () => { this.removeKeydownHandler(); args[3]() })
   }
 
   keydownHandler = e => {
