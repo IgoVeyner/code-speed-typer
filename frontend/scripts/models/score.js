@@ -1,9 +1,5 @@
 class Score {
-  constructor(id) {
-    this.time = 0
-    this.strikes = 0
-    this.completed = false
-    id !== undefined ? this.createScoreFromId(id) : this.createScore()
+  constructor() {
   }
 
   static createBlank = () => {
@@ -12,6 +8,20 @@ class Score {
     score.strikes = 0
     score.completed = false
     return score 
+  }
+
+  static createFromId = id => {
+    const score = new Score
+    score.id = id
+
+    api.fetchScore(id)
+    .then(scoreData => { 
+      score.username = scoreData.included[0].attributes.name
+      score.time = scoreData.data.attributes.time
+      score.strikes = scoreData.data.attributes.strikes
+    })
+
+    return score
   }
 
   createScore = () => api.postScore(user.id, user.code.id).then(this.assignID) 
