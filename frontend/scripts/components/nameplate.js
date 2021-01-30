@@ -4,7 +4,7 @@ class Nameplate {
   }
 
   createNameplate = () => {
-    const [usernameContainer, username] = this.createElements(["div, h2"])
+    const [usernameContainer, username] = this.createElements(["div", "h2"])
 
     username.innerText = user.username
 
