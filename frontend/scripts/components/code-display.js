@@ -7,8 +7,7 @@ class CodeDisplay {
   }
 
   createDisplay = () => {
-    const div = document.createElement("div")
-    const h2 = document.createElement("h2")
+    const [codeContainer, div, h2] = this.createElements(["div", "div", "h2"])
 
     h2.classList.add("code-header")
     h2.innerText = this.headerText
@@ -26,6 +25,8 @@ class CodeDisplay {
     this.characters = div.children
     this.textBlinker = setInterval(this.changeColor, 400)
   }
+
+  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   changeColor = () => {
     const char = this.characters[this.index]

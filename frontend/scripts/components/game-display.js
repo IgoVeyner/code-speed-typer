@@ -14,5 +14,4 @@ class GameDisplay {
   }
   
   reset = () => main.innerText = ""
-  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 }
