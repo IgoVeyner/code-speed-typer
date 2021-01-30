@@ -17,7 +17,6 @@ class CodesController < ApplicationController
   private
 
   def find_code(id)
-    query = id ? id : params[:id]  
-    @code = Code.find_by_id(query)
+    @code = Code.find_by_id(id)
   end
 end
