@@ -16,17 +16,21 @@ class UserInput {
   inputEvent = e => {
     const inputTruthy = user.display.codeDisplay.checkInput(e.target.value)
     const currentIndex = user.display.codeDisplay.index
+    const codeDisplay = user.display.codeDisplay
     
-    if (currentIndex > 0) {
-      const codeDisplay = user.display.codeDisplay
-      codeDisplay.updateColor(inputTruthy)
-      
-      if (inputTruthy === false) { 
-        const scoreDisplay = user.display.scoreDiv
-        scoreDisplay.updateStrikes() 
-      }
+    if (inputTruthy) { 
+      codeDisplay.handleTimer()
+      codeDisplay.removeBlinkingText()
+      codeDisplay.index += 1
+      if (codeDisplay.index < codeDisplay.characters.length) { codeDisplay.addBlinkingText() }
+      codeDisplay.updateColor()
     }
-    
+
+    if (currentIndex > 0 && !inputTruthy) {
+      const scoreDisplay = user.display.scoreDiv
+      scoreDisplay.updateStrikes() 
+    }
+
     e.target.value = ""
   }
 
