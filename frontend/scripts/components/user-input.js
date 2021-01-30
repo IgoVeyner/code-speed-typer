@@ -16,11 +16,14 @@ class UserInput {
   inputEvent = e => {
     const inputTruthy = user.display.codeDisplay.checkInput(e.target.value)
     const currentIndex = user.display.codeDisplay.index
-    const scoreDisplay = user.display.scoreDiv
-
+    
     if (currentIndex > 0) {
       user.display.codeDisplay.updateColor(inputTruthy)
-      if (inputTruthy === false) { scoreDisplay.updateStrikes() }
+      
+      if (inputTruthy === false) { 
+        const scoreDisplay = user.display.scoreDiv
+        scoreDisplay.updateStrikes() 
+      }
     }
     
     e.target.value = ""
