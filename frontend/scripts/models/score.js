@@ -12,39 +12,29 @@ class Score {
     this.getCurrentScore()
 
     api.updateScore(this.id, this.time, this.strikes, this.completed)
-    .then(data => {
-      this.updateData(data)
+    .then(() => {
 
-      if (user.code.highestScore) {
+      if (user.code.highscore) {
         this.compareToHighscore()
-      } else { 
+      } else {
         user.display.scoreDiv.newHighScoreText()
-        user.code.highestScore = this
         api.postHighscore(user.code.id, user.score.id)
         .then( highscoreData => {
-          user.code.currentHighscoreID = highscoreData.data.id 
-          new ScoreDisplay(user.code.highestScore)
+          user.code.highscore = Highscore.createFromPostHighscore(highscoreData.data) 
+          new ScoreDisplay(user.code.highscore.score)
         })
       }
     })
   }
 
-  updateData = scoreData => {
-    this.currentHighscoreID = scoreData.data.id
-    this.time = scoreData.data.attributes.time
-    this.strikes = scoreData.data.attributes.strikes
-    this.completed = scoreData.data.attributes.completed
-    this.username = user.username
-  }
-
   getCurrentScore = () => {
-    this.completed = true
     const timer = user.display.scoreDiv.timer.innerText
     const strikes = user.display.scoreDiv.num.innerText
-
+    
+    this.username = user.username
+    this.completed = true
     this.time = parseInt(timer.replace(":", ""), 10) * 10
     this.strikes = parseInt(strikes)    
-    console.log(this)
   }
 
   assignID = scoreData => this.id = scoreData.id 
