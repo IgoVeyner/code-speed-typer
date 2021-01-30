@@ -63,10 +63,13 @@ class CodeDisplay {
   }
 
   handleTimer = () => {
-    if (this.index === 0) { user.display.scoreDiv.startTimer() }
+    const display = user.display
+    const scoreContainer = display.scoreDiv
+
+    if (this.index === 0) { scoreContainer.startTimer() }
     if (this.index + 1 === this.line.length ) { 
-      user.display.scoreDiv.stopTimer()
-      user.display.finishGame()
+      scoreContainer.stopTimer()
+      display.finishGame()
      }
   }
 
