@@ -72,11 +72,12 @@ class CodeDisplay {
     if (this.index + 1 === this.line.length ) { 
       scoreContainer.stopTimer()
       display.finishGame()
-     }
+    }
   }
 
   updateColor = truthy => {
     const styles = this.getPrevClassList()
+    
     if (truthy) {
       styles.remove("strike")
       styles.add("correct")
