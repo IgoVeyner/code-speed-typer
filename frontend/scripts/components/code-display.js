@@ -77,12 +77,6 @@ class CodeDisplay {
 
   updateColor = truthy => {
     const styles = this.getPrevClassList()
-    
-    if (truthy) {
-      styles.remove("strike")
-      styles.add("correct")
-    } else {
-      styles.add("strike")
-    }
+    if (truthy) { styles.add("correct") }
   }
 }
