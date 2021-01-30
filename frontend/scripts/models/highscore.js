@@ -12,9 +12,9 @@ class Highscore {
 
   static createFromPostHighscore = data => {
     const highscore = new Highscore
-    highscore.id = data.data.id
+    highscore.id = data.id
     highscore.scoreID = data.attributes.score_id
-    highscore.score = new Score(highscore.id)
+    highscore.score = user.score
     return highscore
   }
 }
