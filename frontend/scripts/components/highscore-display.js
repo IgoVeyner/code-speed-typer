@@ -3,13 +3,14 @@ class HighscoreDisplay {
   }
 
   static createFromScore = score => {
+    const highscore = new Highscore
     const [container, header, text, timer] = this.createElements(["div", "h1", "h2", "span"])
     let time = `${score.time / 10}`
-    this.timer = timer
-    this.timerConverter(time)
+    highscore.timer = timer
+    this.timerConverter(time, highscore)
 
     header.innerText = "Highscore"
-    text.innerText = `Name: ${score.username} | Time: ${this.timer.innerText} | Strikes: ${score.strikes}`
+    text.innerText = `Name: ${score.username} | Time: ${highscore.timer.innerText} | Strikes: ${score.strikes}`
     
     header.classList.add("highscore-header")
     text.classList.add("highscore-text")
@@ -17,21 +18,23 @@ class HighscoreDisplay {
 
     for (const element of [header, text]) { container.appendChild(element) }
     user.display.codeDisplay.container.appendChild(container)
+
+    return highscore
   }
 
   createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
 
-  timerConverter = time => {
+  timerConverter = (time, highscore) => {
     if (time.length < 2) {
-      this.timer.innerText = `00:0${time}`
+      highscore.timer.innerText = `00:0${time}`
     } else if (time.length < 3) {
-      this.timer.innerText = `00:${time}`
+      highscore.timer.innerText = `00:${time}`
     } else if (time.length < 5) {
       let seconds = time.slice(0, time.length - 2)
       if (seconds.length == 1) { seconds = `0${seconds}`} 
-      this.timer.innerText = seconds + ":" + time.slice(time.length - 2, time.length)
+      highscore.timer.innerText = seconds + ":" + time.slice(time.length - 2, time.length)
     } else {
-      this.timer.innerText == "99:99"
+      highscore.timer.innerText == "99:99"
     }
   }
 
