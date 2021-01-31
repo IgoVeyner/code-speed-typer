@@ -1,16 +1,18 @@
 class LoginForm {
   constructor() {
-    this.createForm()
   } 
 
-  createForm = () => {
+  // Custom Constructor
+
+  static createForm = () => {
+    const display = new LoginForm
     const [form, header, input, submit] = helpers.createElements(["form", "h1", "input", "input"])
 
     header.innerText = "Enter a Username"
     submit.type = "submit"
     submit.value = "Start"
 
-    form.addEventListener("submit", this.postToUsers)
+    form.addEventListener("submit", display.postToUsers)
 
     form.classList.add("login-form")
     header.classList.add("form-header")
@@ -21,6 +23,8 @@ class LoginForm {
     main.appendChild(form)
     input.focus()
   }
+
+  // Helpers
 
   postToUsers = e => {
     e.preventDefault()

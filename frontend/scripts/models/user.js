@@ -12,7 +12,7 @@ class User {
 
   // Helpers
 
-  createLoginForm = () => this.display = new LoginForm()
+  createLoginForm = () => this.display = LoginForm.createForm()
   createCode = () => this.code = Code.getCode()
   createScore = () => this.score = Score.createBlank()
   createGameDisplay = () => this.display = GameDisplay.createDisplay()
