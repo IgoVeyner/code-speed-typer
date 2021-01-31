@@ -2,6 +2,8 @@ class Nameplate {
   constructor() {
   }
 
+  // Custom Constructor
+
   static createNameplate = () => {
     const nameplate = new Nameplate
     const [usernameContainer, username] = helpers.createElements(["div", "h2"])

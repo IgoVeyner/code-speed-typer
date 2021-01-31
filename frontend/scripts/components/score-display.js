@@ -1,5 +1,5 @@
 class ScoreDisplay {
-  constructor(score) {
+  constructor() {
   }
 
   // Custom Constructor

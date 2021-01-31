@@ -2,6 +2,8 @@ class ButtonDisplay {
   constructor() {
   }
 
+  // Custom Constructor
+
   static createButtons = () => {
     const display = new ButtonDisplay
     const [buttonsContainer, btn1Container, btn2Container] = helpers.createElements(["div", "div", "div"])
@@ -24,6 +26,8 @@ class ButtonDisplay {
 
     return display
   }
+
+  // Helpers
 
   updateElements = (elements, [...args]) => {
     elements[0].innerText = args[0]
