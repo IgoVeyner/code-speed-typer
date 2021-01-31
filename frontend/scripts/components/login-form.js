@@ -4,7 +4,7 @@ class LoginForm {
   } 
 
   createForm = () => {
-    const [form, header, input, submit] = this.createElements(["form", "h1", "input", "input"])
+    const [form, header, input, submit] = helpers.createElements(["form", "h1", "input", "input"])
 
     header.innerText = "Enter a Username"
     submit.type = "submit"
@@ -21,8 +21,6 @@ class LoginForm {
     main.appendChild(form)
     input.focus()
   }
-
-  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   postToUsers = e => {
     e.preventDefault()
