@@ -16,7 +16,7 @@ class User {
     this.username = data.attributes.name
   }
 
-  createCode = () => this.code = new Code()
+  createCode = () => this.code = Code.getCode()
   createScore = () => this.score = Score.createBlank()
   createGameDisplay = () => this.display = new GameDisplay()
 

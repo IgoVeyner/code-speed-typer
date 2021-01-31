@@ -1,12 +1,19 @@
 class Code {
   constructor() {
-    this.getCode()
   }
 
-  getCode = () => {
+  // Custom Constructor
+
+  static getCode = () => {
+    const code = new Code
+    
     api.fetchRandomCode()
-    .then(this.handleData)
+    .then(data => code.handleData(data))
+
+    return code
   }
+
+  // Helper
 
   handleData = codeData => {
     this.id = codeData.data.id
