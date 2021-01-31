@@ -4,14 +4,14 @@ class ButtonDisplay {
   }
 
   createButtons = () => {
-    const [buttonsContainer, btn1Container, btn2Container] = this.createElements(["div", "div", "div"])
+    const [buttonsContainer, btn1Container, btn2Container] = helpers.createElements(["div", "div", "div"])
     const tryAgainArgs =  ["Try Again", "url(./assets/backspace.png)", "(backspace)", user.resetGame]
     const newRandomArgs =  ["Random", "url(./assets/enter.png)", "(enter)", user.newRandomGame]
 
     let i = 0
     for(const container of [btn1Container, btn2Container]) {
 
-      const elements = this.createElements(["h3", "button", "p"])
+      const elements = helpers.createElements(["h3", "button", "p"])
       i === 0 ? this.updateElements(elements, tryAgainArgs) : this.updateElements(elements, newRandomArgs)
       for (const element of elements) { container.appendChild(element) }
       buttonsContainer.appendChild(container)
@@ -22,8 +22,6 @@ class ButtonDisplay {
     main.appendChild(buttonsContainer)
     window.addEventListener("keydown", this.keydownHandler)
   }
-
-  createElements = ([...elements]) => elements.map(element => document.createElement(element)) 
 
   updateElements = (elements, [...args]) => {
     elements[0].innerText = args[0]
