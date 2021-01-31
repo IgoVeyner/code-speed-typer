@@ -16,12 +16,7 @@ class CodeDisplay {
     h2.innerText = user.code.name
     main.prepend(h2)
 
-    for (const char of display.line) {
-      const span = document.createElement("span")
-      span.innerText = char
-      span.classList.add("code-char")
-      div.appendChild(span)
-    }
+    display.addCharacters(div)
 
     codeContainer.appendChild(div)
     main.appendChild(codeContainer)
@@ -34,6 +29,15 @@ class CodeDisplay {
   }
 
   // Helpers
+
+  addCharacters = div => {
+    for (const char of this.line) {
+      const span = document.createElement("span")
+      span.innerText = char
+      span.classList.add("code-char")
+      div.appendChild(span)
+    }
+  }
 
   changeColor = () => {
     const styles = this.getClassList()
