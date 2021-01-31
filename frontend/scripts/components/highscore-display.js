@@ -31,7 +31,6 @@ class HighscoreDisplay {
       if (seconds.length == 1) { seconds = `0${seconds}`} 
       this.timer.innerText = seconds + ":" + time.slice(time.length - 2, time.length)
     } else {
-      if (this.interval) { this.stopTimer() }
       this.timer.innerText == "99:99"
     }
   }
