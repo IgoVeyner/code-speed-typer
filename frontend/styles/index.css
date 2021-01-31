@@ -34,24 +34,24 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 
 @-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
 }
 @-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
 }
 @-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
 }
 @keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
 }
 
 input:focus,
@@ -186,7 +186,7 @@ main {
   text-shadow: none;
 }
 
-.correct {color: #008000}
+.correct { color: #008000 }
 
 .hidden {
   opacity: 0;
@@ -228,7 +228,7 @@ main {
   margin: 0px 3vw;
 }
 
-.button:hover {cursor: pointer}
+.button:hover { cursor: pointer }
 
 .button-container {
   display: inline-block;
