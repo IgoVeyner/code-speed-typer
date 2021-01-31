@@ -8,7 +8,7 @@ class GameDisplay {
 
   finishGame = () => {
     user.display.userInput.disableInput()
-    user.display.buttons = new ButtonDisplay
+    user.display.buttons = ButtonDisplay.createButtons()
     user.score.updateScore()
   }
   

@@ -1,9 +1,9 @@
 class ButtonDisplay {
   constructor() {
-    this.createButtons()
   }
 
-  createButtons = () => {
+  static createButtons = () => {
+    const display = new ButtonDisplay
     const [buttonsContainer, btn1Container, btn2Container] = helpers.createElements(["div", "div", "div"])
     const tryAgainArgs =  ["Try Again", "url(./assets/backspace.png)", "(backspace)", user.resetGame]
     const newRandomArgs =  ["Random", "url(./assets/enter.png)", "(enter)", user.newRandomGame]
@@ -12,7 +12,7 @@ class ButtonDisplay {
     for(const container of [btn1Container, btn2Container]) {
 
       const elements = helpers.createElements(["h3", "button", "p"])
-      i === 0 ? this.updateElements(elements, tryAgainArgs) : this.updateElements(elements, newRandomArgs)
+      i === 0 ? display.updateElements(elements, tryAgainArgs) : display.updateElements(elements, newRandomArgs)
       for (const element of elements) { container.appendChild(element) }
       buttonsContainer.appendChild(container)
       i += 1
@@ -20,7 +20,9 @@ class ButtonDisplay {
     
     buttonsContainer.classList.add("button-wrapper")
     main.appendChild(buttonsContainer)
-    window.addEventListener("keydown", this.keydownHandler)
+    window.addEventListener("keydown", display.keydownHandler)
+
+    return display
   }
 
   updateElements = (elements, [...args]) => {
