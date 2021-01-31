@@ -1,9 +1,11 @@
 class API {
 
-  // Constructor
+  // Custom Constructor
 
-  constructor(port = 3000) {
-    this.url = `http://localhost:${port}`
+  static startWithPort(port = 3000) {
+    const api = new API
+    api.url = `http://localhost:${port}`
+    return api
   }
 
   // Helpers
