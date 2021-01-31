@@ -1,9 +1,9 @@
 class Nameplate {
   constructor() {
-    this.createNameplate()
   }
 
-  createNameplate = () => {
+  static createNameplate = () => {
+    const nameplate = new Nameplate
     const [usernameContainer, username] = helpers.createElements(["div", "h2"])
 
     username.innerText = user.username
@@ -13,5 +13,7 @@ class Nameplate {
 
     usernameContainer.appendChild(username)
     main.appendChild(usernameContainer)
+
+    return nameplate
   }
 }
