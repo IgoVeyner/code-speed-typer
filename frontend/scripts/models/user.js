@@ -1,6 +1,11 @@
 class User {
   constructor() {
-    this.display = new LoginForm(this)
+  }
+
+  static startGame = () => {
+    const user = new User
+    user.createLoginForm()
+    return user
   }
 
   postUser = username => {
@@ -16,6 +21,7 @@ class User {
     this.username = data.attributes.name
   }
 
+  createLoginForm = () => this.display = new LoginForm()
   createCode = () => this.code = Code.getCode()
   createScore = () => this.score = Score.createBlank()
   createGameDisplay = () => this.display = new GameDisplay()
