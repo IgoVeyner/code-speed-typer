@@ -15,7 +15,7 @@ class User {
   createLoginForm = () => this.display = new LoginForm()
   createCode = () => this.code = Code.getCode()
   createScore = () => this.score = Score.createBlank()
-  createGameDisplay = () => this.display = new GameDisplay()
+  createGameDisplay = () => this.display = GameDisplay.createDisplay()
 
   postUser = username => {
     api.postUser(username)
