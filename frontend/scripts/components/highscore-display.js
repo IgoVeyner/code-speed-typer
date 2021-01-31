@@ -3,11 +3,11 @@ class HighscoreDisplay {
   }
 
   static createFromScore = score => {
-    const highscore = new Highscore
-    const [container, header, text, timer] = this.createElements(["div", "h1", "h2", "span"])
+    const highscore = new HighscoreDisplay
+    const [container, header, text, timer] = highscore.createElements(["div", "h1", "h2", "span"])
     let time = `${score.time / 10}`
     highscore.timer = timer
-    this.timerConverter(time, highscore)
+    highscore.timerConverter(time, highscore)
 
     header.innerText = "Highscore"
     text.innerText = `Name: ${score.username} | Time: ${highscore.timer.innerText} | Strikes: ${score.strikes}`
@@ -22,7 +22,7 @@ class HighscoreDisplay {
     return highscore
   }
 
-  createElements = ([...elements]) => { return elements.map(element => document.createElement(element)) }
+  createElements = ([...elements]) => elements.map(element => document.createElement(element))
 
   timerConverter = (time, highscore) => {
     if (time.length < 2) {
