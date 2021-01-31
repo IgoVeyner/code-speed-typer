@@ -1,19 +1,20 @@
 class CodeDisplay {
   constructor() {
-    this.line = user.code.line
-    this.headerText = user.code.name
-    this.index = 0
-    this.createDisplay()
   }
 
-  createDisplay = () => {
+  static createDisplay = () => {
+    const display = new CodeDisplay
+
+    display.line = user.code.line
+    display.index = 0
+
     const [codeContainer, div, h2] = helpers.createElements(["div", "div", "h2"])
 
     h2.classList.add("code-header")
-    h2.innerText = this.headerText
+    h2.innerText = user.code.name
     main.prepend(h2)
 
-    for (const char of this.line) {
+    for (const char of display.line) {
       const span = document.createElement("span")
       span.innerText = char
       span.classList.add("code-char")
@@ -23,9 +24,11 @@ class CodeDisplay {
     codeContainer.appendChild(div)
     main.appendChild(codeContainer)
 
-    this.characters = div.children
-    this.container = codeContainer
-    this.textBlinker = setInterval(this.changeColor, 400)
+    display.characters = div.children
+    display.container = codeContainer
+    display.textBlinker = setInterval(display.changeColor, 400)
+    
+    return display
   }
 
   changeColor = () => {
