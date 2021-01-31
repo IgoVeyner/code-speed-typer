@@ -6,21 +6,19 @@ class CodeDisplay {
 
   static createDisplay = () => {
     const display = new CodeDisplay
+    const [codeContainer, div, h2] = helpers.createElements(["div", "div", "h2"])
 
     display.line = user.code.line
     display.index = 0
-
-    const [codeContainer, div, h2] = helpers.createElements(["div", "div", "h2"])
+    h2.innerText = user.code.name
 
     h2.classList.add("code-header")
-    h2.innerText = user.code.name
+    
     main.prepend(h2)
-
-    display.addCharacters(div)
-
     codeContainer.appendChild(div)
     main.appendChild(codeContainer)
-
+    
+    display.addCharacters(div)
     display.characters = div.children
     display.container = codeContainer
     display.textBlinker = setInterval(display.changeColor, 400)
