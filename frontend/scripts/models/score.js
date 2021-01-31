@@ -6,15 +6,19 @@ class Score {
 
   static createBlank = () => {
     const score = new Score 
+
     score.time = 0
     score.strikes = 0
     score.completed = false
+
     score.createScore()
+
     return score 
   }
 
   static createFromId = id => {
     const score = new Score
+
     score.id = id
 
     api.fetchScore(id)
