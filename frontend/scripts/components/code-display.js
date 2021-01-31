@@ -2,6 +2,8 @@ class CodeDisplay {
   constructor() {
   }
 
+  // Custom Constructor
+
   static createDisplay = () => {
     const display = new CodeDisplay
 
@@ -30,6 +32,8 @@ class CodeDisplay {
     
     return display
   }
+
+  // Helpers
 
   changeColor = () => {
     const styles = this.getClassList()
