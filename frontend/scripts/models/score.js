@@ -45,7 +45,7 @@ class Score {
         api.postHighscore(user.code.id, user.score.id)
         .then( highscoreData => {
           user.code.highscore = Highscore.createFromPostHighscore(highscoreData.data) 
-          new ScoreDisplay(user.code.highscore.score)
+          user.display.highscoreDisplay = HighscoreDisplay.createFromScore(this)
         })
       }
     })
@@ -69,9 +69,9 @@ class Score {
       user.display.scoreDiv.newHighScoreText()
       api.updateHighscore(user.code.highscore.id, this.id)
       user.code.highscore.score = this
-      new ScoreDisplay(currentScore)
+      HighscoreDisplay.createFromScore(currentScore)
     } else {
-      new ScoreDisplay(highscore)
+      HighscoreDisplay.createFromScore(highscore)
     }
   }
 }
