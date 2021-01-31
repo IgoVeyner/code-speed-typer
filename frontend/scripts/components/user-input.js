@@ -1,17 +1,26 @@
 class UserInput {
   constructor() {
-    this.addUserInput()
   }
 
-  addUserInput = () => {
+  // Custom Constructor
+
+  static addUserInput = () => {
+    const UI = new UserInput
     const input = document.createElement("input")
+
     input.classList.add("hidden")
-    input.addEventListener("input", this.inputEvent)
-    window.addEventListener("click", this.forceFocus)
+
+    input.addEventListener("input", UI.inputEvent)
+    window.addEventListener("click", UI.forceFocus)
+
     main.appendChild(input)
-    this.input = input
     input.focus()
+    UI.input = input
+
+    return UI
   }
+
+  // Event Handler
 
   inputEvent = e => {
     const inputTruthy = user.display.codeDisplay.checkInput(e.target.value)
@@ -33,6 +42,8 @@ class UserInput {
 
     e.target.value = ""
   }
+
+  // Helpers
 
   forceFocus = () => this.input.focus() 
 

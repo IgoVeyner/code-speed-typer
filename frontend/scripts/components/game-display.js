@@ -3,7 +3,7 @@ class GameDisplay {
     this.nameplate = Nameplate.createNameplate()
     this.scoreDiv = ScoreDisplay.createBlank()
     this.codeDisplay = new CodeDisplay
-    this.userInput = new UserInput
+    this.userInput = UserInput.addUserInput()
   }
 
   finishGame = () => {
