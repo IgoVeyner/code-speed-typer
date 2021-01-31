@@ -26,6 +26,10 @@ class CodeDisplay {
   }
 
   // Helpers
+  
+  checkInput = input => input === this.characters[this.index].innerText 
+  getClassList = () => this.characters[this.index].classList
+  getPrevClassList = () => this.characters[this.index - 1].classList
 
   addCharacters = div => {
     for (const char of this.line) {
@@ -42,10 +46,6 @@ class CodeDisplay {
     
     styles.contains(style) ? styles.remove(style) : styles.add(style)
   }
-
-  checkInput = input => input === this.characters[this.index].innerText ? true : false
-  getClassList = () => this.characters[this.index].classList
-  getPrevClassList = () => this.characters[this.index - 1].classList
 
   addBlinkingText = () => {
     const styles = this.getClassList()
