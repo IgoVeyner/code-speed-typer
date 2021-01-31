@@ -1,6 +1,4 @@
 class Nameplate {
-  constructor() {
-  }
 
   // Custom Constructor
 

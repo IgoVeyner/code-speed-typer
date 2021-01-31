@@ -1,6 +1,4 @@
 class User {
-  constructor() {
-  }
 
   // Custom Constructor
 

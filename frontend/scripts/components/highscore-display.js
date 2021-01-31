@@ -1,7 +1,5 @@
 class HighscoreDisplay {
-  constructor() {
-  }
-
+  
   // Custom Constructor
 
   static createFromScore = score => {

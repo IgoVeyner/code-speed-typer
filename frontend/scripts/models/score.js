@@ -1,6 +1,4 @@
 class Score {
-  constructor() {
-  }
 
   // Custom Constructors
 

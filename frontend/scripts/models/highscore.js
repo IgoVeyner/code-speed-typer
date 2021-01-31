@@ -1,6 +1,4 @@
 class Highscore {
-  constructor() {
-  }
 
   // Custom Constructors
 

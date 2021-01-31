@@ -1,6 +1,4 @@
 class Code {
-  constructor() {
-  }
 
   // Custom Constructor
 

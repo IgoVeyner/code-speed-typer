@@ -1,6 +1,4 @@
 class LoginForm {
-  constructor() {
-  } 
 
   // Custom Constructor
 
@@ -20,7 +18,7 @@ class LoginForm {
     submit.classList.add('login-submit')
 
     for (const element of [header, input, submit]) { form.appendChild(element) }
-    
+
     main.appendChild(form)
     input.focus()
   }

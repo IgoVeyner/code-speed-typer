@@ -1,6 +1,5 @@
 class UserInput {
-  constructor() {
-  }
+
 
   // Custom Constructor
 

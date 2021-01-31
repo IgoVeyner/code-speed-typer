@@ -1,6 +1,4 @@
 class GameDisplay {
-  constructor() {
-  }
 
   // Custom Constructor
   

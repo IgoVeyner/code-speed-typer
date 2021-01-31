@@ -1,6 +1,4 @@
 class ButtonDisplay {
-  constructor() {
-  }
 
   // Custom Constructor
 

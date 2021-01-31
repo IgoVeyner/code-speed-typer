@@ -1,6 +1,4 @@
 class CodeDisplay {
-  constructor() {
-  }
 
   // Custom Constructor
 
