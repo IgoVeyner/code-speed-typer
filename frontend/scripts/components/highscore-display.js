@@ -34,4 +34,10 @@ class HighscoreDisplay {
       this.timer.innerText == "99:99"
     }
   }
+
+  addUsername = (username, div) => {
+    const h3 = document.createElement("h3")
+    h3.innerText = username
+    div.appendChild(h3)
+  }
 }
