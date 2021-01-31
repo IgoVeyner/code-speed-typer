@@ -2,6 +2,8 @@ class HighscoreDisplay {
   constructor() {
   }
 
+  // Custom Constructor
+
   static createFromScore = score => {
     const highscore = new HighscoreDisplay
     const [container, header, text, timer] = highscore.createElements(["div", "h1", "h2", "span"])
@@ -21,6 +23,8 @@ class HighscoreDisplay {
 
     return highscore
   }
+
+  // Helpers
 
   createElements = ([...elements]) => elements.map(element => document.createElement(element))
 
