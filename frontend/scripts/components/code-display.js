@@ -10,18 +10,17 @@ class CodeDisplay {
 
     display.line = user.code.line
     display.index = 0
+    display.addCharacters(div)
+    display.characters = div.children
+    display.container = codeContainer
+    display.textBlinker = setInterval(display.changeColor, 400)
+    
     h2.innerText = user.code.name
-
     h2.classList.add("code-header")
     
     main.prepend(h2)
     codeContainer.appendChild(div)
     main.appendChild(codeContainer)
-    
-    display.addCharacters(div)
-    display.characters = div.children
-    display.container = codeContainer
-    display.textBlinker = setInterval(display.changeColor, 400)
     
     return display
   }
