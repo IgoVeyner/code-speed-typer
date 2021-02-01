@@ -1,7 +1,7 @@
 # Code Speed Typer 
 Given a line of code how fast can you type it? Did you make any mistakes? Did you have to look down at your keyboard to look for that pesky pipe character? 
 
-This app spits a random line of code on your screen and its your job to type it. It'll track how long it takes you to complete it and the number of mistakes you make. Practice with your friends on the same computer by refreshing the page and logging in with a different username.
+This app spits a random line of code on your screen and its your job to type it. It'll track how long it takes you to complete it and the number of mistakes you make. Practice with your friends on the same computer by refreshing the page and logging in with a different username. GLHF!
 
 ## Usage
 To use this app, just clone, cd into the backend, run 'bundle install', 'rails db:migrate', 'rails db:seed', start the server with 'rails s', and open index.html in your browser of choice (Chrome is preferred).
