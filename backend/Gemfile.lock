@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mimemagicrb/mimemagic.git
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  specs:
+    mimemagic (0.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,7 +88,6 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.3)
@@ -90,6 +96,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pg (1.2.3)
     puma (4.3.7)
       nio4r (~> 2.0)
     racc (1.5.2)
@@ -139,7 +146,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
@@ -157,16 +163,17 @@ DEPENDENCIES
   byebug
   fast_jsonapi
   listen (~> 3.2)
+  mimemagic!
+  pg
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.6.1p33
+   ruby 2.6.8p205
 
 BUNDLED WITH
-   2.1.4
+   2.2.23
