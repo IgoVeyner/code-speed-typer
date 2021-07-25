@@ -2,9 +2,9 @@ class API {
 
   // Custom Constructor
 
-  static startWithPort(port = 3000) {
+  static startWithPort() {
     const api = new API
-    api.url = `http://localhost:${port}`
+    api.url = `https://code-speed-typer.herokuapp.com/`
     return api
   }
 
