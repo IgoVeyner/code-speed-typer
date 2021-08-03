@@ -5,6 +5,8 @@ Given a line of code how fast can you type it? Did you make any mistakes? Did yo
 
 This app spits a random line of code on your screen and its your job to type it. It'll track how long it takes you to complete it and the number of mistakes you make. Practice with your friends on the same computer by refreshing the page and logging in with a different username. GLHF!
 
+Check it out [live](https://code-race.netlify.app/).
+
 ---
 ## Technologies Used
 
